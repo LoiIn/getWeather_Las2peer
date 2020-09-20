@@ -1,2 +1,2 @@
-# getWeather_Las2peer
+# getWeather
 use Las2peer framework on apache ant
