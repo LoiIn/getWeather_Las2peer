@@ -1,13 +1,8 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+<!-- Weather Forecast -->
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Weather</title>
+		<title>Weather Forecast</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="keywords" content="Weather Report Widget template Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login sign up Responsive web template, SmartPhone Compatible web template, free web designs for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
@@ -19,31 +14,2534 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			}
 		</script>
 		<!-- Custom Theme files -->
-		<link href="../../src/main//webapp/css/style.css" rel="stylesheet" type="text/css" media="all" />
-		<link href="css/owl.carousel.css" rel="stylesheet" type="text/css" media="all">
+		<!-- <link href="css/style.css" rel="stylesheet" type="text/css" media="all" /> -->
+		
+		<style>
+			*{margin: 0;padding: 0;}
+
+
+			/*set up common*/
+			html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+			article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
+
+			ol,ul{list-style:none;margin:0px;padding:0px;}
+
+			blockquote,q{quotes:none;}
+
+			blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+
+			table{border-collapse:collapse;border-spacing:0;}
+
+			/*--start editing from here--*/
+			a{text-decoration:none;}
+
+			.txt-rt{text-align:right;}
+
+			.txt-lt{text-align:left;}
+
+			.txt-center{text-align:center;}
+
+			.float-rt{float:right;}
+
+			.float-lt{float:left;}
+
+			.clear{clear:both;}
+
+			.pos-relative{position:relative;}
+
+			.pos-absolute{position:absolute;}
+
+			.vertical-base{	vertical-align:baseline;}
+
+			.vertical-top{	vertical-align:top;}
+
+			nav.vertical ul li{	display:block;}
+
+			nav.horizontal ul li{	display: inline-block;}
+
+			img{max-width:100%;}
+			/*--end reset--*/
+			body {
+				font-family: 'Open Sans', sans-serif;
+				background: url(https://cdn2.vectorstock.com/i/1000x1000/07/81/seamless-weather-forecast-background-vector-2000781.jpg);
+				background-attachment: fixed;
+				-webkit-background-size: cover;
+				-moz-background-size: cover;
+				-o-background-size: cover;
+				-ms-background-size: cover;
+				background-size: cover;
+			}
+			h1 {
+				font-size: 3em;
+				text-align: center;
+				color: #fff;
+				font-weight: 100;
+			}
+			/*-- main --*/
+			.main-agileits{
+				padding: 2em 0 0;
+			}
+			.main-wthree-row {
+				width: 25%;
+				margin: 2em auto;
+				background: rgba(0, 0, 0, 0.34);
+				background-size: cover; 
+				padding: 2em;
+			} 
+			.date {
+				font-size: 1.4em;
+				color: #fff;
+				font-weight: 400;
+				line-height: 1.8em;
+			}
+
+			.agileinfo-text {
+				text-align: center;
+			}
+			.agileinfo-text h3 {
+				font-size: 2em;
+				color: #fff;
+			}
+			.agileinfo-text h5 {
+				font-size: 0.9em;
+				color: #ececec;
+				font-weight: 100;
+				margin-top: 0.5em;
+			}
+			.agileinfo-text h2 {
+				font-size: 8em;
+				font-weight: 900;
+				color: red;
+			}
+			.agileinfo-text h2 span {
+				font-weight: 100;
+				font-size: 0.5em;
+				vertical-align: text-top;
+			}
+			.agileinfo-text h4 {
+				font-size: 2em;
+				color: #fff;
+				letter-spacing: 3px;
+			}
+		
+			.item.agile-item {
+				text-align: center;
+			}
+			.agile-item h6 {
+				font-size: 0.9em;
+				color: #fff;
+				font-weight: 300;
+			}
+
+			.copy-rights {
+				text-align: center;
+				padding: 1em 0 2em;
+			}
+			.copy-rights p {
+				font-size: 1em;
+				color: #fff;
+				text-align: center;
+				line-height: 1.8em;
+			}
+			.copy-rights p a{
+				color:#fff; 
+				-webkit-transition:.5s all;
+				-moz-transition:.5s all;
+				-o-transition:.5s all;
+				-ms-transition:.5s all;
+				transition:.5s all;
+			} 
+			.copy-rights p a:hover{
+			color: #ffd701; 
+			} 
+
+			.inputName{
+				width:100%;
+				display: flex;
+				justify-content: space-between;
+			}
+
+			#inputName{
+				margin-top: 70px;
+				width: 80%;
+				height: 30px;
+				background-color: rgba(255, 255, 255, 0.198);
+				color: white;
+				border: none;
+			}
+
+			#searchRs{
+				margin-top: 70px;
+				vertical-align: middle;
+				width: 18%;
+				text-align: center;
+				height: 30px;
+				float: right;
+				background-color: rgba(255, 217, 1, 0.863);
+			}
+
+			::placeholder{
+				color:white;
+				opacity: 1;
+			}
+
+			@media(max-width:1440px){
+				.main-wthree-row {
+					width: 27%; 
+				}
+				} 
+				@media(max-width:1280px){
+				.main-wthree-row {
+					width: 31%;
+				}
+				}
+				@media(max-width:1080px){
+				.main-wthree-row {
+					width: 35%;
+				}
+			} 
+			@media(max-width:991px){
+				.main-agileits {
+					padding: 2em 0 0;
+				}
+				h1 {
+					font-size: 2.6em; 
+				}
+				.agileinfo-text h2 {
+					font-size: 7em; 
+				}
+				.main-wthree-row {
+					width: 40%;
+				}
+			} 
+			@media(max-width:768px){
+				.copy-rights { 
+					padding: 1em 0 2em;
+				}
+
+			}
+			@media(max-width:667px){
+				.main-wthree-row {
+					width: 50%;
+				}
+			}
+			@media(max-width:600px){
+				h1 {
+					font-size: 2.4em;
+				}
+				.agileinfo-text h6 { 
+					margin-top: 0.5em;
+				}
+				.main-agileits {
+					padding: 1.5em 0 0;
+				}
+			} 
+			@media(max-width:480px){
+				h1 {
+					font-size: 2em;
+				}
+				.main-wthree-row {
+					width: 57%;
+				}
+				.date {
+					font-size: 1.2em; 
+				}
+			}
+			@media(max-width:414px){
+				.agileinfo-text h2 {
+					font-size: 6em;
+				}
+				.agileinfo-text h4 {
+					font-size: 1.8em; 
+					letter-spacing: 1px;
+				}
+				.main-wthree-row { 
+					padding: 1.5em;
+				}
+				.copy-rights p {
+					font-size: 0.9em; 
+					padding: 0 1em;
+				}
+			}
+			@media(max-width:384px){
+				h1 {
+					font-size: 1.8em;
+				}
+				.main-wthree-row {
+					width: 70%;
+				}
+			} 
+			@media(max-width:320px){
+				h1 {
+					font-size: 1.5em;
+				}
+				.main-wthree-row {
+					width: 75%;
+					padding: 1em;
+				}
+				.agileinfo-text h2 {
+					font-size: 5em;
+				}
+				.agileinfo-text h4 {
+					font-size: 1.4em; 
+				} 
+				.agileinfo-text h6 { 
+					letter-spacing: 0px; 
+				}
+
+			}
+			/*-- //responsive-design --*/
+		</style>
+		<!-- <link href="css/owl.carousel.css" rel="stylesheet" type="text/css" media="all"> -->
+		<style>
+			.owl-carousel .owl-wrapper:after {
+				content: ".";
+				display: block;
+				clear: both;
+				visibility: hidden;
+				line-height: 0;
+				height: 0;
+			}
+			/* display none until init */
+			.owl-carousel{
+				display: none;
+				position: relative;
+				width: 100%;
+				-ms-touch-action: pan-y; 
+			}
+			.owl-carousel .owl-wrapper{
+				display: none;
+				position: relative;
+				-webkit-transform: translate3d(0px, 0px, 0px);
+			}
+			.owl-carousel .owl-wrapper-outer{
+				overflow: hidden;
+				position: relative;
+				width: 100%;
+			}
+			.owl-carousel .owl-wrapper-outer.autoHeight{
+				-webkit-transition: height 500ms ease-in-out;
+				-moz-transition: height 500ms ease-in-out;
+				-ms-transition: height 500ms ease-in-out;
+				-o-transition: height 500ms ease-in-out;
+				transition: height 500ms ease-in-out;
+			}
+				
+			.owl-carousel .owl-item{
+				float: left;
+			}
+			.owl-controls .owl-page,
+			.owl-controls .owl-buttons div{
+				cursor: pointer;
+			}
+			.owl-controls {
+				-webkit-user-select: none;
+				-khtml-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+				-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+			}
+
+			/* mouse grab icon */
+			.grabbing { 
+				cursor:url(grabbing.png) 8 8, move;
+			}
+
+			/* fix */
+			.owl-carousel  .owl-wrapper,
+			.owl-carousel  .owl-item{
+				-webkit-backface-visibility: hidden;
+				-moz-backface-visibility:    hidden;
+				-ms-backface-visibility:     hidden;
+				-webkit-transform: translate3d(0,0,0);
+				-moz-transform: translate3d(0,0,0);
+				-ms-transform: translate3d(0,0,0);
+			}
+			.owl-pagination {
+				text-align: center;
+				margin-top: 1.5em;
+			}
+			.owl-theme .owl-controls .owl-page {
+				display: inline-block;
+				zoom: 1;
+			}
+			.owl-theme .owl-controls .owl-page span {
+				display: block;
+				width: 12px;
+				height: 12px;
+				margin: 5px 7px;
+				filter: Alpha(Opacity=50);
+				opacity: 1;
+				-webkit-border-radius: 20px;
+				-moz-border-radius: 20px;
+				border-radius: 20px;
+				background: #fff;
+			}
+			.owl-theme .owl-controls .owl-page.active span, .owl-theme .owl-controls.clickable .owl-page:hover span {
+				filter: Alpha(Opacity=100);
+				opacity: 1;
+				background:#ffd701;
+			}
+		</style>
 		<!-- //Custom Theme files -->
 		<!-- js -->
 		<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-		<script src="js/owl.carousel.js" type="text/javascript"  ></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!-- <script src="js/owl.carousel.js" type="text/javascript"  ></script> -->
+		<script>
+			if (typeof Object.create !== "function") {
+				Object.create = function (obj) {
+					function F() {}
+					F.prototype = obj;
+					return new F();
+				};
+			}
+			(function ($, window, document) {
+
+				var Carousel = {
+					init : function (options, el) {
+						var base = this;
+
+						base.$elem = $(el);
+						base.options = $.extend({}, $.fn.owlCarousel.options, base.$elem.data(), options);
+
+						base.userOptions = options;
+						base.loadContent();
+					},
+
+					loadContent : function () {
+						var base = this, url;
+
+						function getData(data) {
+							var i, content = "";
+							if (typeof base.options.jsonSuccess === "function") {
+								base.options.jsonSuccess.apply(this, [data]);
+							} else {
+								for (i in data.owl) {
+									if (data.owl.hasOwnProperty(i)) {
+										content += data.owl[i].item;
+									}
+								}
+								base.$elem.html(content);
+							}
+							base.logIn();
+						}
+
+						if (typeof base.options.beforeInit === "function") {
+							base.options.beforeInit.apply(this, [base.$elem]);
+						}
+
+						if (typeof base.options.jsonPath === "string") {
+							url = base.options.jsonPath;
+							$.getJSON(url, getData);
+						} else {
+							base.logIn();
+						}
+					},
+
+					logIn : function () {
+						var base = this;
+
+						base.$elem.data({
+							"owl-originalStyles": base.$elem.attr("style"),
+							"owl-originalClasses": base.$elem.attr("class")
+						});
+
+						base.$elem.css({opacity: 0});
+						base.orignalItems = base.options.items;
+						base.checkBrowser();
+						base.wrapperWidth = 0;
+						base.checkVisible = null;
+						base.setVars();
+					},
+
+					setVars : function () {
+						var base = this;
+						if (base.$elem.children().length === 0) {return false; }
+						base.baseClass();
+						base.eventTypes();
+						base.$userItems = base.$elem.children();
+						base.itemsAmount = base.$userItems.length;
+						base.wrapItems();
+						base.$owlItems = base.$elem.find(".owl-item");
+						base.$owlWrapper = base.$elem.find(".owl-wrapper");
+						base.playDirection = "next";
+						base.prevItem = 0;
+						base.prevArr = [0];
+						base.currentItem = 0;
+						base.customEvents();
+						base.onStartup();
+					},
+
+					onStartup : function () {
+						var base = this;
+						base.updateItems();
+						base.calculateAll();
+						base.buildControls();
+						base.updateControls();
+						base.response();
+						base.moveEvents();
+						base.stopOnHover();
+						base.owlStatus();
+
+						if (base.options.transitionStyle !== false) {
+							base.transitionTypes(base.options.transitionStyle);
+						}
+						if (base.options.autoPlay === true) {
+							base.options.autoPlay = 5000;
+						}
+						base.play();
+
+						base.$elem.find(".owl-wrapper").css("display", "block");
+
+						if (!base.$elem.is(":visible")) {
+							base.watchVisibility();
+						} else {
+							base.$elem.css("opacity", 1);
+						}
+						base.onstartup = false;
+						base.eachMoveUpdate();
+						if (typeof base.options.afterInit === "function") {
+							base.options.afterInit.apply(this, [base.$elem]);
+						}
+					},
+
+					eachMoveUpdate : function () {
+						var base = this;
+
+						if (base.options.lazyLoad === true) {
+							base.lazyLoad();
+						}
+						if (base.options.autoHeight === true) {
+							base.autoHeight();
+						}
+						base.onVisibleItems();
+
+						if (typeof base.options.afterAction === "function") {
+							base.options.afterAction.apply(this, [base.$elem]);
+						}
+					},
+
+					updateVars : function () {
+						var base = this;
+						if (typeof base.options.beforeUpdate === "function") {
+							base.options.beforeUpdate.apply(this, [base.$elem]);
+						}
+						base.watchVisibility();
+						base.updateItems();
+						base.calculateAll();
+						base.updatePosition();
+						base.updateControls();
+						base.eachMoveUpdate();
+						if (typeof base.options.afterUpdate === "function") {
+							base.options.afterUpdate.apply(this, [base.$elem]);
+						}
+					},
+
+					reload : function () {
+						var base = this;
+						window.setTimeout(function () {
+							base.updateVars();
+						}, 0);
+					},
+
+					watchVisibility : function () {
+						var base = this;
+
+						if (base.$elem.is(":visible") === false) {
+							base.$elem.css({opacity: 0});
+							window.clearInterval(base.autoPlayInterval);
+							window.clearInterval(base.checkVisible);
+						} else {
+							return false;
+						}
+						base.checkVisible = window.setInterval(function () {
+							if (base.$elem.is(":visible")) {
+								base.reload();
+								base.$elem.animate({opacity: 1}, 200);
+								window.clearInterval(base.checkVisible);
+							}
+						}, 500);
+					},
+
+					wrapItems : function () {
+						var base = this;
+						base.$userItems.wrapAll("<div class=\"owl-wrapper\">").wrap("<div class=\"owl-item\"></div>");
+						base.$elem.find(".owl-wrapper").wrap("<div class=\"owl-wrapper-outer\">");
+						base.wrapperOuter = base.$elem.find(".owl-wrapper-outer");
+						base.$elem.css("display", "block");
+					},
+
+					baseClass : function () {
+						var base = this,
+							hasBaseClass = base.$elem.hasClass(base.options.baseClass),
+							hasThemeClass = base.$elem.hasClass(base.options.theme);
+
+						if (!hasBaseClass) {
+							base.$elem.addClass(base.options.baseClass);
+						}
+
+						if (!hasThemeClass) {
+							base.$elem.addClass(base.options.theme);
+						}
+					},
+
+					updateItems : function () {
+						var base = this, width, i;
+
+						if (base.options.responsive === false) {
+							return false;
+						}
+						if (base.options.singleItem === true) {
+							base.options.items = base.orignalItems = 1;
+							base.options.itemsCustom = false;
+							base.options.itemsDesktop = false;
+							base.options.itemsDesktopSmall = false;
+							base.options.itemsTablet = false;
+							base.options.itemsTabletSmall = false;
+							base.options.itemsMobile = false;
+							return false;
+						}
+
+						width = $(base.options.responsiveBaseWidth).width();
+
+						if (width > (base.options.itemsDesktop[0] || base.orignalItems)) {
+							base.options.items = base.orignalItems;
+						}
+						if (base.options.itemsCustom !== false) {
+							//Reorder array by screen size
+							base.options.itemsCustom.sort(function (a, b) {return a[0] - b[0]; });
+
+							for (i = 0; i < base.options.itemsCustom.length; i += 1) {
+								if (base.options.itemsCustom[i][0] <= width) {
+									base.options.items = base.options.itemsCustom[i][1];
+								}
+							}
+
+						} else {
+
+							if (width <= base.options.itemsDesktop[0] && base.options.itemsDesktop !== false) {
+								base.options.items = base.options.itemsDesktop[1];
+							}
+
+							if (width <= base.options.itemsDesktopSmall[0] && base.options.itemsDesktopSmall !== false) {
+								base.options.items = base.options.itemsDesktopSmall[1];
+							}
+
+							if (width <= base.options.itemsTablet[0] && base.options.itemsTablet !== false) {
+								base.options.items = base.options.itemsTablet[1];
+							}
+
+							if (width <= base.options.itemsTabletSmall[0] && base.options.itemsTabletSmall !== false) {
+								base.options.items = base.options.itemsTabletSmall[1];
+							}
+
+							if (width <= base.options.itemsMobile[0] && base.options.itemsMobile !== false) {
+								base.options.items = base.options.itemsMobile[1];
+							}
+						}
+
+						//if number of items is less than declared
+						if (base.options.items > base.itemsAmount && base.options.itemsScaleUp === true) {
+							base.options.items = base.itemsAmount;
+						}
+					},
+
+					response : function () {
+						var base = this,
+							smallDelay,
+							lastWindowWidth;
+
+						if (base.options.responsive !== true) {
+							return false;
+						}
+						lastWindowWidth = $(window).width();
+
+						base.resizer = function () {
+							if ($(window).width() !== lastWindowWidth) {
+								if (base.options.autoPlay !== false) {
+									window.clearInterval(base.autoPlayInterval);
+								}
+								window.clearTimeout(smallDelay);
+								smallDelay = window.setTimeout(function () {
+									lastWindowWidth = $(window).width();
+									base.updateVars();
+								}, base.options.responsiveRefreshRate);
+							}
+						};
+						$(window).resize(base.resizer);
+					},
+
+					updatePosition : function () {
+						var base = this;
+						base.jumpTo(base.currentItem);
+						if (base.options.autoPlay !== false) {
+							base.checkAp();
+						}
+					},
+
+					appendItemsSizes : function () {
+						var base = this,
+							roundPages = 0,
+							lastItem = base.itemsAmount - base.options.items;
+
+						base.$owlItems.each(function (index) {
+							var $this = $(this);
+							$this
+								.css({"width": base.itemWidth})
+								.data("owl-item", Number(index));
+
+							if (index % base.options.items === 0 || index === lastItem) {
+								if (!(index > lastItem)) {
+									roundPages += 1;
+								}
+							}
+							$this.data("owl-roundPages", roundPages);
+						});
+					},
+
+					appendWrapperSizes : function () {
+						var base = this,
+							width = base.$owlItems.length * base.itemWidth;
+
+						base.$owlWrapper.css({
+							"width": width * 2,
+							"left": 0
+						});
+						base.appendItemsSizes();
+					},
+
+					calculateAll : function () {
+						var base = this;
+						base.calculateWidth();
+						base.appendWrapperSizes();
+						base.loops();
+						base.max();
+					},
+
+					calculateWidth : function () {
+						var base = this;
+						base.itemWidth = Math.round(base.$elem.width() / base.options.items);
+					},
+
+					max : function () {
+						var base = this,
+							maximum = ((base.itemsAmount * base.itemWidth) - base.options.items * base.itemWidth) * -1;
+						if (base.options.items > base.itemsAmount) {
+							base.maximumItem = 0;
+							maximum = 0;
+							base.maximumPixels = 0;
+						} else {
+							base.maximumItem = base.itemsAmount - base.options.items;
+							base.maximumPixels = maximum;
+						}
+						return maximum;
+					},
+
+					min : function () {
+						return 0;
+					},
+
+					loops : function () {
+						var base = this,
+							prev = 0,
+							elWidth = 0,
+							i,
+							item,
+							roundPageNum;
+
+						base.positionsInArray = [0];
+						base.pagesInArray = [];
+
+						for (i = 0; i < base.itemsAmount; i += 1) {
+							elWidth += base.itemWidth;
+							base.positionsInArray.push(-elWidth);
+
+							if (base.options.scrollPerPage === true) {
+								item = $(base.$owlItems[i]);
+								roundPageNum = item.data("owl-roundPages");
+								if (roundPageNum !== prev) {
+									base.pagesInArray[prev] = base.positionsInArray[i];
+									prev = roundPageNum;
+								}
+							}
+						}
+					},
+
+					buildControls : function () {
+						var base = this;
+						if (base.options.navigation === true || base.options.pagination === true) {
+							base.owlControls = $("<div class=\"owl-controls\"/>").toggleClass("clickable", !base.browser.isTouch).appendTo(base.$elem);
+						}
+						if (base.options.pagination === true) {
+							base.buildPagination();
+						}
+						if (base.options.navigation === true) {
+							base.buildButtons();
+						}
+					},
+
+					buildButtons : function () {
+						var base = this,
+							buttonsWrapper = $("<div class=\"owl-buttons\"/>");
+						base.owlControls.append(buttonsWrapper);
+
+						base.buttonPrev = $("<div/>", {
+							"class" : "owl-prev",
+							"html" : base.options.navigationText[0] || ""
+						});
+
+						base.buttonNext = $("<div/>", {
+							"class" : "owl-next",
+							"html" : base.options.navigationText[1] || ""
+						});
+
+						buttonsWrapper
+							.append(base.buttonPrev)
+							.append(base.buttonNext);
+
+						buttonsWrapper.on("touchstart.owlControls mousedown.owlControls", "div[class^=\"owl\"]", function (event) {
+							event.preventDefault();
+						});
+
+						buttonsWrapper.on("touchend.owlControls mouseup.owlControls", "div[class^=\"owl\"]", function (event) {
+							event.preventDefault();
+							if ($(this).hasClass("owl-next")) {
+								base.next();
+							} else {
+								base.prev();
+							}
+						});
+					},
+
+					buildPagination : function () {
+						var base = this;
+
+						base.paginationWrapper = $("<div class=\"owl-pagination\"/>");
+						base.owlControls.append(base.paginationWrapper);
+
+						base.paginationWrapper.on("touchend.owlControls mouseup.owlControls", ".owl-page", function (event) {
+							event.preventDefault();
+							if (Number($(this).data("owl-page")) !== base.currentItem) {
+								base.goTo(Number($(this).data("owl-page")), true);
+							}
+						});
+					},
+
+					updatePagination : function () {
+						var base = this,
+							counter,
+							lastPage,
+							lastItem,
+							i,
+							paginationButton,
+							paginationButtonInner;
+
+						if (base.options.pagination === false) {
+							return false;
+						}
+
+						base.paginationWrapper.html("");
+
+						counter = 0;
+						lastPage = base.itemsAmount - base.itemsAmount % base.options.items;
+
+						for (i = 0; i < base.itemsAmount; i += 1) {
+							if (i % base.options.items === 0) {
+								counter += 1;
+								if (lastPage === i) {
+									lastItem = base.itemsAmount - base.options.items;
+								}
+								paginationButton = $("<div/>", {
+									"class" : "owl-page"
+								});
+								paginationButtonInner = $("<span></span>", {
+									"text": base.options.paginationNumbers === true ? counter : "",
+									"class": base.options.paginationNumbers === true ? "owl-numbers" : ""
+								});
+								paginationButton.append(paginationButtonInner);
+
+								paginationButton.data("owl-page", lastPage === i ? lastItem : i);
+								paginationButton.data("owl-roundPages", counter);
+
+								base.paginationWrapper.append(paginationButton);
+							}
+						}
+						base.checkPagination();
+					},
+					checkPagination : function () {
+						var base = this;
+						if (base.options.pagination === false) {
+							return false;
+						}
+						base.paginationWrapper.find(".owl-page").each(function () {
+							if ($(this).data("owl-roundPages") === $(base.$owlItems[base.currentItem]).data("owl-roundPages")) {
+								base.paginationWrapper
+									.find(".owl-page")
+									.removeClass("active");
+								$(this).addClass("active");
+							}
+						});
+					},
+
+					checkNavigation : function () {
+						var base = this;
+
+						if (base.options.navigation === false) {
+							return false;
+						}
+						if (base.options.rewindNav === false) {
+							if (base.currentItem === 0 && base.maximumItem === 0) {
+								base.buttonPrev.addClass("disabled");
+								base.buttonNext.addClass("disabled");
+							} else if (base.currentItem === 0 && base.maximumItem !== 0) {
+								base.buttonPrev.addClass("disabled");
+								base.buttonNext.removeClass("disabled");
+							} else if (base.currentItem === base.maximumItem) {
+								base.buttonPrev.removeClass("disabled");
+								base.buttonNext.addClass("disabled");
+							} else if (base.currentItem !== 0 && base.currentItem !== base.maximumItem) {
+								base.buttonPrev.removeClass("disabled");
+								base.buttonNext.removeClass("disabled");
+							}
+						}
+					},
+
+					updateControls : function () {
+						var base = this;
+						base.updatePagination();
+						base.checkNavigation();
+						if (base.owlControls) {
+							if (base.options.items >= base.itemsAmount) {
+								base.owlControls.hide();
+							} else {
+								base.owlControls.show();
+							}
+						}
+					},
+
+					destroyControls : function () {
+						var base = this;
+						if (base.owlControls) {
+							base.owlControls.remove();
+						}
+					},
+
+					next : function (speed) {
+						var base = this;
+
+						if (base.isTransition) {
+							return false;
+						}
+
+						base.currentItem += base.options.scrollPerPage === true ? base.options.items : 1;
+						if (base.currentItem > base.maximumItem + (base.options.scrollPerPage === true ? (base.options.items - 1) : 0)) {
+							if (base.options.rewindNav === true) {
+								base.currentItem = 0;
+								speed = "rewind";
+							} else {
+								base.currentItem = base.maximumItem;
+								return false;
+							}
+						}
+						base.goTo(base.currentItem, speed);
+					},
+
+					prev : function (speed) {
+						var base = this;
+
+						if (base.isTransition) {
+							return false;
+						}
+
+						if (base.options.scrollPerPage === true && base.currentItem > 0 && base.currentItem < base.options.items) {
+							base.currentItem = 0;
+						} else {
+							base.currentItem -= base.options.scrollPerPage === true ? base.options.items : 1;
+						}
+						if (base.currentItem < 0) {
+							if (base.options.rewindNav === true) {
+								base.currentItem = base.maximumItem;
+								speed = "rewind";
+							} else {
+								base.currentItem = 0;
+								return false;
+							}
+						}
+						base.goTo(base.currentItem, speed);
+					},
+
+					goTo : function (position, speed, drag) {
+						var base = this,
+							goToPixel;
+
+						if (base.isTransition) {
+							return false;
+						}
+						if (typeof base.options.beforeMove === "function") {
+							base.options.beforeMove.apply(this, [base.$elem]);
+						}
+						if (position >= base.maximumItem) {
+							position = base.maximumItem;
+						} else if (position <= 0) {
+							position = 0;
+						}
+
+						base.currentItem = base.owl.currentItem = position;
+						if (base.options.transitionStyle !== false && drag !== "drag" && base.options.items === 1 && base.browser.support3d === true) {
+							base.swapSpeed(0);
+							if (base.browser.support3d === true) {
+								base.transition3d(base.positionsInArray[position]);
+							} else {
+								base.css2slide(base.positionsInArray[position], 1);
+							}
+							base.afterGo();
+							base.singleItemTransition();
+							return false;
+						}
+						goToPixel = base.positionsInArray[position];
+
+						if (base.browser.support3d === true) {
+							base.isCss3Finish = false;
+
+							if (speed === true) {
+								base.swapSpeed("paginationSpeed");
+								window.setTimeout(function () {
+									base.isCss3Finish = true;
+								}, base.options.paginationSpeed);
+
+							} else if (speed === "rewind") {
+								base.swapSpeed(base.options.rewindSpeed);
+								window.setTimeout(function () {
+									base.isCss3Finish = true;
+								}, base.options.rewindSpeed);
+
+							} else {
+								base.swapSpeed("slideSpeed");
+								window.setTimeout(function () {
+									base.isCss3Finish = true;
+								}, base.options.slideSpeed);
+							}
+							base.transition3d(goToPixel);
+						} else {
+							if (speed === true) {
+								base.css2slide(goToPixel, base.options.paginationSpeed);
+							} else if (speed === "rewind") {
+								base.css2slide(goToPixel, base.options.rewindSpeed);
+							} else {
+								base.css2slide(goToPixel, base.options.slideSpeed);
+							}
+						}
+						base.afterGo();
+					},
+
+					jumpTo : function (position) {
+						var base = this;
+						if (typeof base.options.beforeMove === "function") {
+							base.options.beforeMove.apply(this, [base.$elem]);
+						}
+						if (position >= base.maximumItem || position === -1) {
+							position = base.maximumItem;
+						} else if (position <= 0) {
+							position = 0;
+						}
+						base.swapSpeed(0);
+						if (base.browser.support3d === true) {
+							base.transition3d(base.positionsInArray[position]);
+						} else {
+							base.css2slide(base.positionsInArray[position], 1);
+						}
+						base.currentItem = base.owl.currentItem = position;
+						base.afterGo();
+					},
+
+					afterGo : function () {
+						var base = this;
+
+						base.prevArr.push(base.currentItem);
+						base.prevItem = base.owl.prevItem = base.prevArr[base.prevArr.length - 2];
+						base.prevArr.shift(0);
+
+						if (base.prevItem !== base.currentItem) {
+							base.checkPagination();
+							base.checkNavigation();
+							base.eachMoveUpdate();
+
+							if (base.options.autoPlay !== false) {
+								base.checkAp();
+							}
+						}
+						if (typeof base.options.afterMove === "function" && base.prevItem !== base.currentItem) {
+							base.options.afterMove.apply(this, [base.$elem]);
+						}
+					},
+
+					stop : function () {
+						var base = this;
+						base.apStatus = "stop";
+						window.clearInterval(base.autoPlayInterval);
+					},
+
+					checkAp : function () {
+						var base = this;
+						if (base.apStatus !== "stop") {
+							base.play();
+						}
+					},
+
+					play : function () {
+						var base = this;
+						base.apStatus = "play";
+						if (base.options.autoPlay === false) {
+							return false;
+						}
+						window.clearInterval(base.autoPlayInterval);
+						base.autoPlayInterval = window.setInterval(function () {
+							base.next(true);
+						}, base.options.autoPlay);
+					},
+
+					swapSpeed : function (action) {
+						var base = this;
+						if (action === "slideSpeed") {
+							base.$owlWrapper.css(base.addCssSpeed(base.options.slideSpeed));
+						} else if (action === "paginationSpeed") {
+							base.$owlWrapper.css(base.addCssSpeed(base.options.paginationSpeed));
+						} else if (typeof action !== "string") {
+							base.$owlWrapper.css(base.addCssSpeed(action));
+						}
+					},
+
+					addCssSpeed : function (speed) {
+						return {
+							"-webkit-transition": "all " + speed + "ms ease",
+							"-moz-transition": "all " + speed + "ms ease",
+							"-o-transition": "all " + speed + "ms ease",
+							"transition": "all " + speed + "ms ease"
+						};
+					},
+
+					removeTransition : function () {
+						return {
+							"-webkit-transition": "",
+							"-moz-transition": "",
+							"-o-transition": "",
+							"transition": ""
+						};
+					},
+
+					doTranslate : function (pixels) {
+						return {
+							"-webkit-transform": "translate3d(" + pixels + "px, 0px, 0px)",
+							"-moz-transform": "translate3d(" + pixels + "px, 0px, 0px)",
+							"-o-transform": "translate3d(" + pixels + "px, 0px, 0px)",
+							"-ms-transform": "translate3d(" + pixels + "px, 0px, 0px)",
+							"transform": "translate3d(" + pixels + "px, 0px,0px)"
+						};
+					},
+
+					transition3d : function (value) {
+						var base = this;
+						base.$owlWrapper.css(base.doTranslate(value));
+					},
+
+					css2move : function (value) {
+						var base = this;
+						base.$owlWrapper.css({"left" : value});
+					},
+
+					css2slide : function (value, speed) {
+						var base = this;
+
+						base.isCssFinish = false;
+						base.$owlWrapper.stop(true, true).animate({
+							"left" : value
+						}, {
+							duration : speed || base.options.slideSpeed,
+							complete : function () {
+								base.isCssFinish = true;
+							}
+						});
+					},
+
+					checkBrowser : function () {
+						var base = this,
+							translate3D = "translate3d(0px, 0px, 0px)",
+							tempElem = document.createElement("div"),
+							regex,
+							asSupport,
+							support3d,
+							isTouch;
+
+						tempElem.style.cssText = "  -moz-transform:" + translate3D +
+											"; -ms-transform:"     + translate3D +
+											"; -o-transform:"      + translate3D +
+											"; -webkit-transform:" + translate3D +
+											"; transform:"         + translate3D;
+						regex = /translate3d\(0px, 0px, 0px\)/g;
+						asSupport = tempElem.style.cssText.match(regex);
+						support3d = (asSupport !== null && asSupport.length === 1);
+
+						isTouch = "ontouchstart" in window || window.navigator.msMaxTouchPoints;
+
+						base.browser = {
+							"support3d" : support3d,
+							"isTouch" : isTouch
+						};
+					},
+
+					moveEvents : function () {
+						var base = this;
+						if (base.options.mouseDrag !== false || base.options.touchDrag !== false) {
+							base.gestures();
+							base.disabledEvents();
+						}
+					},
+
+					eventTypes : function () {
+						var base = this,
+							types = ["s", "e", "x"];
+
+						base.ev_types = {};
+
+						if (base.options.mouseDrag === true && base.options.touchDrag === true) {
+							types = [
+								"touchstart.owl mousedown.owl",
+								"touchmove.owl mousemove.owl",
+								"touchend.owl touchcancel.owl mouseup.owl"
+							];
+						} else if (base.options.mouseDrag === false && base.options.touchDrag === true) {
+							types = [
+								"touchstart.owl",
+								"touchmove.owl",
+								"touchend.owl touchcancel.owl"
+							];
+						} else if (base.options.mouseDrag === true && base.options.touchDrag === false) {
+							types = [
+								"mousedown.owl",
+								"mousemove.owl",
+								"mouseup.owl"
+							];
+						}
+
+						base.ev_types.start = types[0];
+						base.ev_types.move = types[1];
+						base.ev_types.end = types[2];
+					},
+
+					disabledEvents :  function () {
+						var base = this;
+						base.$elem.on("dragstart.owl", function (event) { event.preventDefault(); });
+						base.$elem.on("mousedown.disableTextSelect", function (e) {
+							return $(e.target).is('input, textarea, select, option');
+						});
+					},
+
+					gestures : function () {
+						/*jslint unparam: true*/
+						var base = this,
+							locals = {
+								offsetX : 0,
+								offsetY : 0,
+								baseElWidth : 0,
+								relativePos : 0,
+								position: null,
+								minSwipe : null,
+								maxSwipe: null,
+								sliding : null,
+								dargging: null,
+								targetElement : null
+							};
+
+						base.isCssFinish = true;
+
+						function getTouches(event) {
+							if (event.touches !== undefined) {
+								return {
+									x : event.touches[0].pageX,
+									y : event.touches[0].pageY
+								};
+							}
+
+							if (event.touches === undefined) {
+								if (event.pageX !== undefined) {
+									return {
+										x : event.pageX,
+										y : event.pageY
+									};
+								}
+								if (event.pageX === undefined) {
+									return {
+										x : event.clientX,
+										y : event.clientY
+									};
+								}
+							}
+						}
+
+						function swapEvents(type) {
+							if (type === "on") {
+								$(document).on(base.ev_types.move, dragMove);
+								$(document).on(base.ev_types.end, dragEnd);
+							} else if (type === "off") {
+								$(document).off(base.ev_types.move);
+								$(document).off(base.ev_types.end);
+							}
+						}
+
+						function dragStart(event) {
+							var ev = event.originalEvent || event || window.event,
+								position;
+
+							if (ev.which === 3) {
+								return false;
+							}
+							if (base.itemsAmount <= base.options.items) {
+								return;
+							}
+							if (base.isCssFinish === false && !base.options.dragBeforeAnimFinish) {
+								return false;
+							}
+							if (base.isCss3Finish === false && !base.options.dragBeforeAnimFinish) {
+								return false;
+							}
+
+							if (base.options.autoPlay !== false) {
+								window.clearInterval(base.autoPlayInterval);
+							}
+
+							if (base.browser.isTouch !== true && !base.$owlWrapper.hasClass("grabbing")) {
+								base.$owlWrapper.addClass("grabbing");
+							}
+
+							base.newPosX = 0;
+							base.newRelativeX = 0;
+
+							$(this).css(base.removeTransition());
+
+							position = $(this).position();
+							locals.relativePos = position.left;
+
+							locals.offsetX = getTouches(ev).x - position.left;
+							locals.offsetY = getTouches(ev).y - position.top;
+
+							swapEvents("on");
+
+							locals.sliding = false;
+							locals.targetElement = ev.target || ev.srcElement;
+						}
+
+						function dragMove(event) {
+							var ev = event.originalEvent || event || window.event,
+								minSwipe,
+								maxSwipe;
+
+							base.newPosX = getTouches(ev).x - locals.offsetX;
+							base.newPosY = getTouches(ev).y - locals.offsetY;
+							base.newRelativeX = base.newPosX - locals.relativePos;
+
+							if (typeof base.options.startDragging === "function" && locals.dragging !== true && base.newRelativeX !== 0) {
+								locals.dragging = true;
+								base.options.startDragging.apply(base, [base.$elem]);
+							}
+
+							if ((base.newRelativeX > 8 || base.newRelativeX < -8) && (base.browser.isTouch === true)) {
+								if (ev.preventDefault !== undefined) {
+									ev.preventDefault();
+								} else {
+									ev.returnValue = false;
+								}
+								locals.sliding = true;
+							}
+
+							if ((base.newPosY > 10 || base.newPosY < -10) && locals.sliding === false) {
+								$(document).off("touchmove.owl");
+							}
+
+							minSwipe = function () {
+								return base.newRelativeX / 5;
+							};
+
+							maxSwipe = function () {
+								return base.maximumPixels + base.newRelativeX / 5;
+							};
+
+							base.newPosX = Math.max(Math.min(base.newPosX, minSwipe()), maxSwipe());
+							if (base.browser.support3d === true) {
+								base.transition3d(base.newPosX);
+							} else {
+								base.css2move(base.newPosX);
+							}
+						}
+
+						function dragEnd(event) {
+							var ev = event.originalEvent || event || window.event,
+								newPosition,
+								handlers,
+								owlStopEvent;
+
+							ev.target = ev.target || ev.srcElement;
+
+							locals.dragging = false;
+
+							if (base.browser.isTouch !== true) {
+								base.$owlWrapper.removeClass("grabbing");
+							}
+
+							if (base.newRelativeX < 0) {
+								base.dragDirection = base.owl.dragDirection = "left";
+							} else {
+								base.dragDirection = base.owl.dragDirection = "right";
+							}
+
+							if (base.newRelativeX !== 0) {
+								newPosition = base.getNewPosition();
+								base.goTo(newPosition, false, "drag");
+								if (locals.targetElement === ev.target && base.browser.isTouch !== true) {
+									$(ev.target).on("click.disable", function (ev) {
+										ev.stopImmediatePropagation();
+										ev.stopPropagation();
+										ev.preventDefault();
+										$(ev.target).off("click.disable");
+									});
+									handlers = $._data(ev.target, "events").click;
+									owlStopEvent = handlers.pop();
+									handlers.splice(0, 0, owlStopEvent);
+								}
+							}
+							swapEvents("off");
+						}
+						base.$elem.on(base.ev_types.start, ".owl-wrapper", dragStart);
+					},
+
+					getNewPosition : function () {
+						var base = this,
+							newPosition = base.closestItem();
+
+						if (newPosition > base.maximumItem) {
+							base.currentItem = base.maximumItem;
+							newPosition  = base.maximumItem;
+						} else if (base.newPosX >= 0) {
+							newPosition = 0;
+							base.currentItem = 0;
+						}
+						return newPosition;
+					},
+					closestItem : function () {
+						var base = this,
+							array = base.options.scrollPerPage === true ? base.pagesInArray : base.positionsInArray,
+							goal = base.newPosX,
+							closest = null;
+
+						$.each(array, function (i, v) {
+							if (goal - (base.itemWidth / 20) > array[i + 1] && goal - (base.itemWidth / 20) < v && base.moveDirection() === "left") {
+								closest = v;
+								if (base.options.scrollPerPage === true) {
+									base.currentItem = $.inArray(closest, base.positionsInArray);
+								} else {
+									base.currentItem = i;
+								}
+							} else if (goal + (base.itemWidth / 20) < v && goal + (base.itemWidth / 20) > (array[i + 1] || array[i] - base.itemWidth) && base.moveDirection() === "right") {
+								if (base.options.scrollPerPage === true) {
+									closest = array[i + 1] || array[array.length - 1];
+									base.currentItem = $.inArray(closest, base.positionsInArray);
+								} else {
+									closest = array[i + 1];
+									base.currentItem = i + 1;
+								}
+							}
+						});
+						return base.currentItem;
+					},
+
+					moveDirection : function () {
+						var base = this,
+							direction;
+						if (base.newRelativeX < 0) {
+							direction = "right";
+							base.playDirection = "next";
+						} else {
+							direction = "left";
+							base.playDirection = "prev";
+						}
+						return direction;
+					},
+
+					customEvents : function () {
+						/*jslint unparam: true*/
+						var base = this;
+						base.$elem.on("owl.next", function () {
+							base.next();
+						});
+						base.$elem.on("owl.prev", function () {
+							base.prev();
+						});
+						base.$elem.on("owl.play", function (event, speed) {
+							base.options.autoPlay = speed;
+							base.play();
+							base.hoverStatus = "play";
+						});
+						base.$elem.on("owl.stop", function () {
+							base.stop();
+							base.hoverStatus = "stop";
+						});
+						base.$elem.on("owl.goTo", function (event, item) {
+							base.goTo(item);
+						});
+						base.$elem.on("owl.jumpTo", function (event, item) {
+							base.jumpTo(item);
+						});
+					},
+
+					stopOnHover : function () {
+						var base = this;
+						if (base.options.stopOnHover === true && base.browser.isTouch !== true && base.options.autoPlay !== false) {
+							base.$elem.on("mouseover", function () {
+								base.stop();
+							});
+							base.$elem.on("mouseout", function () {
+								if (base.hoverStatus !== "stop") {
+									base.play();
+								}
+							});
+						}
+					},
+
+					lazyLoad : function () {
+						var base = this,
+							i,
+							$item,
+							itemNumber,
+							$lazyImg,
+							follow;
+
+						if (base.options.lazyLoad === false) {
+							return false;
+						}
+						for (i = 0; i < base.itemsAmount; i += 1) {
+							$item = $(base.$owlItems[i]);
+
+							if ($item.data("owl-loaded") === "loaded") {
+								continue;
+							}
+
+							itemNumber = $item.data("owl-item");
+							$lazyImg = $item.find(".lazyOwl");
+
+							if (typeof $lazyImg.data("src") !== "string") {
+								$item.data("owl-loaded", "loaded");
+								continue;
+							}
+							if ($item.data("owl-loaded") === undefined) {
+								$lazyImg.hide();
+								$item.addClass("loading").data("owl-loaded", "checked");
+							}
+							if (base.options.lazyFollow === true) {
+								follow = itemNumber >= base.currentItem;
+							} else {
+								follow = true;
+							}
+							if (follow && itemNumber < base.currentItem + base.options.items && $lazyImg.length) {
+								$lazyImg.each(function() {
+									base.lazyPreload($item, $(this));
+								});
+							}
+						}
+					},
+
+					lazyPreload : function ($item, $lazyImg) {
+						var base = this,
+							iterations = 0,
+							isBackgroundImg;
+
+						if ($lazyImg.prop("tagName") === "DIV") {
+							$lazyImg.css("background-image", "url(" + $lazyImg.data("src") + ")");
+							isBackgroundImg = true;
+						} else {
+							$lazyImg[0].src = $lazyImg.data("src");
+						}
+
+						function showImage() {
+							$item.data("owl-loaded", "loaded").removeClass("loading");
+							$lazyImg.removeAttr("data-src");
+							if (base.options.lazyEffect === "fade") {
+								$lazyImg.fadeIn(400);
+							} else {
+								$lazyImg.show();
+							}
+							if (typeof base.options.afterLazyLoad === "function") {
+								base.options.afterLazyLoad.apply(this, [base.$elem]);
+							}
+						}
+
+						function checkLazyImage() {
+							iterations += 1;
+							if (base.completeImg($lazyImg.get(0)) || isBackgroundImg === true) {
+								showImage();
+							} else if (iterations <= 100) {//if image loads in less than 10 seconds 
+								window.setTimeout(checkLazyImage, 100);
+							} else {
+								showImage();
+							}
+						}
+
+						checkLazyImage();
+					},
+
+					autoHeight : function () {
+						var base = this,
+							$currentimg = $(base.$owlItems[base.currentItem]).find("img"),
+							iterations;
+
+						function addHeight() {
+							var $currentItem = $(base.$owlItems[base.currentItem]).height();
+							base.wrapperOuter.css("height", $currentItem + "px");
+							if (!base.wrapperOuter.hasClass("autoHeight")) {
+								window.setTimeout(function () {
+									base.wrapperOuter.addClass("autoHeight");
+								}, 0);
+							}
+						}
+
+						function checkImage() {
+							iterations += 1;
+							if (base.completeImg($currentimg.get(0))) {
+								addHeight();
+							} else if (iterations <= 100) { //if image loads in less than 10 seconds 
+								window.setTimeout(checkImage, 100);
+							} else {
+								base.wrapperOuter.css("height", ""); //Else remove height attribute
+							}
+						}
+
+						if ($currentimg.get(0) !== undefined) {
+							iterations = 0;
+							checkImage();
+						} else {
+							addHeight();
+						}
+					},
+
+					completeImg : function (img) {
+						var naturalWidthType;
+
+						if (!img.complete) {
+							return false;
+						}
+						naturalWidthType = typeof img.naturalWidth;
+						if (naturalWidthType !== "undefined" && img.naturalWidth === 0) {
+							return false;
+						}
+						return true;
+					},
+
+					onVisibleItems : function () {
+						var base = this,
+							i;
+
+						if (base.options.addClassActive === true) {
+							base.$owlItems.removeClass("active");
+						}
+						base.visibleItems = [];
+						for (i = base.currentItem; i < base.currentItem + base.options.items; i += 1) {
+							base.visibleItems.push(i);
+
+							if (base.options.addClassActive === true) {
+								$(base.$owlItems[i]).addClass("active");
+							}
+						}
+						base.owl.visibleItems = base.visibleItems;
+					},
+
+					transitionTypes : function (className) {
+						var base = this;
+						//Currently available: "fade", "backSlide", "goDown", "fadeUp"
+						base.outClass = "owl-" + className + "-out";
+						base.inClass = "owl-" + className + "-in";
+					},
+
+					singleItemTransition : function () {
+						var base = this,
+							outClass = base.outClass,
+							inClass = base.inClass,
+							$currentItem = base.$owlItems.eq(base.currentItem),
+							$prevItem = base.$owlItems.eq(base.prevItem),
+							prevPos = Math.abs(base.positionsInArray[base.currentItem]) + base.positionsInArray[base.prevItem],
+							origin = Math.abs(base.positionsInArray[base.currentItem]) + base.itemWidth / 2,
+							animEnd = 'webkitAnimationEnd oAnimationEnd MSAnimationEnd animationend';
+
+						base.isTransition = true;
+
+						base.$owlWrapper
+							.addClass('owl-origin')
+							.css({
+								"-webkit-transform-origin" : origin + "px",
+								"-moz-perspective-origin" : origin + "px",
+								"perspective-origin" : origin + "px"
+							});
+						function transStyles(prevPos) {
+							return {
+								"position" : "relative",
+								"left" : prevPos + "px"
+							};
+						}
+
+						$prevItem
+							.css(transStyles(prevPos, 10))
+							.addClass(outClass)
+							.on(animEnd, function () {
+								base.endPrev = true;
+								$prevItem.off(animEnd);
+								base.clearTransStyle($prevItem, outClass);
+							});
+
+						$currentItem
+							.addClass(inClass)
+							.on(animEnd, function () {
+								base.endCurrent = true;
+								$currentItem.off(animEnd);
+								base.clearTransStyle($currentItem, inClass);
+							});
+					},
+
+					clearTransStyle : function (item, classToRemove) {
+						var base = this;
+						item.css({
+							"position" : "",
+							"left" : ""
+						}).removeClass(classToRemove);
+
+						if (base.endPrev && base.endCurrent) {
+							base.$owlWrapper.removeClass('owl-origin');
+							base.endPrev = false;
+							base.endCurrent = false;
+							base.isTransition = false;
+						}
+					},
+
+					owlStatus : function () {
+						var base = this;
+						base.owl = {
+							"userOptions"   : base.userOptions,
+							"baseElement"   : base.$elem,
+							"userItems"     : base.$userItems,
+							"owlItems"      : base.$owlItems,
+							"currentItem"   : base.currentItem,
+							"prevItem"      : base.prevItem,
+							"visibleItems"  : base.visibleItems,
+							"isTouch"       : base.browser.isTouch,
+							"browser"       : base.browser,
+							"dragDirection" : base.dragDirection
+						};
+					},
+
+					clearEvents : function () {
+						var base = this;
+						base.$elem.off(".owl owl mousedown.disableTextSelect");
+						$(document).off(".owl owl");
+						$(window).off("resize", base.resizer);
+					},
+
+					unWrap : function () {
+						var base = this;
+						if (base.$elem.children().length !== 0) {
+							base.$owlWrapper.unwrap();
+							base.$userItems.unwrap().unwrap();
+							if (base.owlControls) {
+								base.owlControls.remove();
+							}
+						}
+						base.clearEvents();
+						base.$elem.attr({
+							style: base.$elem.data("owl-originalStyles") || "",
+							class: base.$elem.data("owl-originalClasses")
+						});
+					},
+
+					destroy : function () {
+						var base = this;
+						base.stop();
+						window.clearInterval(base.checkVisible);
+						base.unWrap();
+						base.$elem.removeData();
+					},
+
+					reinit : function (newOptions) {
+						var base = this,
+							options = $.extend({}, base.userOptions, newOptions);
+						base.unWrap();
+						base.init(options, base.$elem);
+					},
+
+					addItem : function (htmlString, targetPosition) {
+						var base = this,
+							position;
+
+						if (!htmlString) {return false; }
+
+						if (base.$elem.children().length === 0) {
+							base.$elem.append(htmlString);
+							base.setVars();
+							return false;
+						}
+						base.unWrap();
+						if (targetPosition === undefined || targetPosition === -1) {
+							position = -1;
+						} else {
+							position = targetPosition;
+						}
+						if (position >= base.$userItems.length || position === -1) {
+							base.$userItems.eq(-1).after(htmlString);
+						} else {
+							base.$userItems.eq(position).before(htmlString);
+						}
+
+						base.setVars();
+					},
+
+					removeItem : function (targetPosition) {
+						var base = this,
+							position;
+
+						if (base.$elem.children().length === 0) {
+							return false;
+						}
+						if (targetPosition === undefined || targetPosition === -1) {
+							position = -1;
+						} else {
+							position = targetPosition;
+						}
+
+						base.unWrap();
+						base.$userItems.eq(position).remove();
+						base.setVars();
+					}
+
+				};
+
+				$.fn.owlCarousel = function (options) {
+					return this.each(function () {
+						if ($(this).data("owl-init") === true) {
+							return false;
+						}
+						$(this).data("owl-init", true);
+						var carousel = Object.create(Carousel);
+						carousel.init(options, this);
+						$.data(this, "owlCarousel", carousel);
+					});
+				};
+
+				$.fn.owlCarousel.options = {
+
+					items : 5,
+					itemsCustom : false, 
+					itemsTablet : [768, 3], 
+					itemsTabletSmall : [414, 3],	
+					itemsMobile : [375, 3], 
+					singleItem : false,
+					itemsScaleUp : false,
+
+					slideSpeed : 200,
+					paginationSpeed : 800,
+					rewindSpeed : 1000,
+
+					autoPlay : false,
+					stopOnHover : false,
+
+					navigation : false,
+					navigationText : ["prev", "next"],
+					rewindNav : true,
+					scrollPerPage : false,
+
+					pagination : true,
+					paginationNumbers : false,
+
+					responsive : true,
+					responsiveRefreshRate : 200,
+					responsiveBaseWidth : window,
+
+					baseClass : "owl-carousel",
+					theme : "owl-theme",
+
+					lazyLoad : false,
+					lazyFollow : true,
+					lazyEffect : "fade",
+
+					autoHeight : false,
+
+					jsonPath : false,
+					jsonSuccess : false,
+
+					dragBeforeAnimFinish : true,
+					mouseDrag : true,
+					touchDrag : true,
+
+					addClassActive : false,
+					transitionStyle : false,
+
+					beforeUpdate : false,
+					afterUpdate : false,
+					beforeInit : false,
+					afterInit : false,
+					beforeMove : false,
+					afterMove : false,
+					afterAction : false,
+					startDragging : false,
+					afterLazyLoad: false
+				};
+			}(jQuery, window, document));
+
+		</script>
 		<script>
 			$(document).ready(function() { 
 				$("#owl-demo").owlCarousel({ 
-				  autoPlay: 3000, //Set AutoPlay to 3 seconds
-			 
-				  items : 3,
-				  itemsDesktop : [768,3],
-				  itemsDesktopSmall : [414,4]
-			 
+				autoPlay: 3000, //Set AutoPlay to 3 seconds
+			
+				items : 3,
+				itemsDesktop : [768,3],
+				itemsDesktopSmall : [414,4]
 				});
-			 
 			}); 
 		</script> 
 		<!-- sky icons -->
-		<script src="js/skycons.js"></script>
+		<!-- <script src="js/skycons.js"></script> -->
+		<script>
+			(function(global) {
+			"use strict";
+			var requestInterval, cancelInterval;
+
+			(function() {
+				var raf = global.requestAnimationFrame       ||
+						global.webkitRequestAnimationFrame ||
+						global.mozRequestAnimationFrame    ||
+						global.oRequestAnimationFrame      ||
+						global.msRequestAnimationFrame     ,
+					caf = global.cancelAnimationFrame        ||
+						global.webkitCancelAnimationFrame  ||
+						global.mozCancelAnimationFrame     ||
+						global.oCancelAnimationFrame       ||
+						global.msCancelAnimationFrame      ;
+
+				if(raf && caf) {
+				requestInterval = function(fn, delay) {
+					var handle = {value: null};
+
+					function loop() {
+					handle.value = raf(loop);
+					fn();
+					}
+
+					loop();
+					return handle;
+				};
+
+				cancelInterval = function(handle) {
+					caf(handle.value);
+				};
+				}
+
+				else {
+				requestInterval = setInterval;
+				cancelInterval = clearInterval;
+				}
+			}());
+			
+			var KEYFRAME = 500,
+				STROKE = 0.08,
+				TAU = 2.0 * Math.PI,
+				TWO_OVER_SQRT_2 = 2.0 / Math.sqrt(2);
+
+			function circle(ctx, x, y, r) {
+				ctx.beginPath();
+				ctx.arc(x, y, r, 0, TAU, false);
+				ctx.fill();
+			}
+
+			function line(ctx, ax, ay, bx, by) {
+				ctx.beginPath();
+				ctx.moveTo(ax, ay);
+				ctx.lineTo(bx, by);
+				ctx.stroke();
+			}
+
+			function puff(ctx, t, cx, cy, rx, ry, rmin, rmax) {
+				var c = Math.cos(t * TAU),
+					s = Math.sin(t * TAU);
+
+				rmax -= rmin;
+
+				circle(
+				ctx,
+				cx - s * rx,
+				cy + c * ry + rmax * 0.5,
+				rmin + (1 - c * 0.5) * rmax
+				);
+			}
+
+			function puffs(ctx, t, cx, cy, rx, ry, rmin, rmax) {
+				var i;
+
+				for(i = 5; i--; )
+				puff(ctx, t + i / 5, cx, cy, rx, ry, rmin, rmax);
+			}
+
+			function cloud(ctx, t, cx, cy, cw, s, color) {
+				t /= 30000;
+
+				var a = cw * 0.21,
+					b = cw * 0.12,
+					c = cw * 0.24,
+					d = cw * 0.28;
+
+				ctx.fillStyle = color;
+				puffs(ctx, t, cx, cy, a, b, c, d);
+
+				ctx.globalCompositeOperation = 'destination-out';
+				puffs(ctx, t, cx, cy, a, b, c - s, d - s);
+				ctx.globalCompositeOperation = 'source-over';
+			}
+
+			function sun(ctx, t, cx, cy, cw, s, color) {
+				t /= 40000;
+
+				var a = cw * 0.25 - s * 0.5,
+					b = cw * 0.32 + s * 0.5,
+					c = cw * 0.50 - s * 0.5,
+					i, p, cos, sin;
+
+				ctx.strokeStyle = color;
+				ctx.lineWidth = s;
+				ctx.lineCap = "round";
+				ctx.lineJoin = "round";
+
+				ctx.beginPath();
+				ctx.arc(cx, cy, a, 0, TAU, false);
+				ctx.stroke();
+
+				for(i = 8; i--; ) {
+				p = (t + i / 8) * TAU;
+				cos = Math.cos(p);
+				sin = Math.sin(p);
+				line(ctx, cx + cos * b, cy + sin * b, cx + cos * c, cy + sin * c);
+				}
+			}
+
+			function moon(ctx, t, cx, cy, cw, s, color) {
+				t /= 15000;
+
+				var a = cw * 0.29 - s * 0.5,
+					b = cw * 0.05,
+					c = Math.cos(t * TAU),
+					p = c * TAU / -16;
+
+				ctx.strokeStyle = color;
+				ctx.lineWidth = s;
+				ctx.lineCap = "round";
+				ctx.lineJoin = "round";
+
+				cx += c * b;
+
+				ctx.beginPath();
+				ctx.arc(cx, cy, a, p + TAU / 8, p + TAU * 7 / 8, false);
+				ctx.arc(cx + Math.cos(p) * a * TWO_OVER_SQRT_2, cy + Math.sin(p) * a * TWO_OVER_SQRT_2, a, p + TAU * 5 / 8, p + TAU * 3 / 8, true);
+				ctx.closePath();
+				ctx.stroke();
+			}
+
+			function rain(ctx, t, cx, cy, cw, s, color) {
+				t /= 1350;
+
+				var a = cw * 0.16,
+					b = TAU * 11 / 12,
+					c = TAU *  7 / 12,
+					i, p, x, y;
+
+				ctx.fillStyle = color;
+
+				for(i = 4; i--; ) {
+				p = (t + i / 4) % 1;
+				x = cx + ((i - 1.5) / 1.5) * (i === 1 || i === 2 ? -1 : 1) * a;
+				y = cy + p * p * cw;
+				ctx.beginPath();
+				ctx.moveTo(x, y - s * 1.5);
+				ctx.arc(x, y, s * 0.75, b, c, false);
+				ctx.fill();
+				}
+			}
+
+			function sleet(ctx, t, cx, cy, cw, s, color) {
+				t /= 750;
+
+				var a = cw * 0.1875,
+					b = TAU * 11 / 12,
+					c = TAU *  7 / 12,
+					i, p, x, y;
+
+				ctx.strokeStyle = color;
+				ctx.lineWidth = s * 0.5;
+				ctx.lineCap = "round";
+				ctx.lineJoin = "round";
+
+				for(i = 4; i--; ) {
+				p = (t + i / 4) % 1;
+				x = Math.floor(cx + ((i - 1.5) / 1.5) * (i === 1 || i === 2 ? -1 : 1) * a) + 0.5;
+				y = cy + p * cw;
+				line(ctx, x, y - s * 1.5, x, y + s * 1.5);
+				}
+			}
+
+			function snow(ctx, t, cx, cy, cw, s, color) {
+				t /= 3000;
+
+				var a  = cw * 0.16,
+					b  = s * 0.75,
+					u  = t * TAU * 0.7,
+					ux = Math.cos(u) * b,
+					uy = Math.sin(u) * b,
+					v  = u + TAU / 3,
+					vx = Math.cos(v) * b,
+					vy = Math.sin(v) * b,
+					w  = u + TAU * 2 / 3,
+					wx = Math.cos(w) * b,
+					wy = Math.sin(w) * b,
+					i, p, x, y;
+
+				ctx.strokeStyle = color;
+				ctx.lineWidth = s * 0.5;
+				ctx.lineCap = "round";
+				ctx.lineJoin = "round";
+
+				for(i = 4; i--; ) {
+				p = (t + i / 4) % 1;
+				x = cx + Math.sin((p + i / 4) * TAU) * a;
+				y = cy + p * cw;
+
+				line(ctx, x - ux, y - uy, x + ux, y + uy);
+				line(ctx, x - vx, y - vy, x + vx, y + vy);
+				line(ctx, x - wx, y - wy, x + wx, y + wy);
+				}
+			}
+
+			function fogbank(ctx, t, cx, cy, cw, s, color) {
+				t /= 30000;
+
+				var a = cw * 0.21,
+					b = cw * 0.06,
+					c = cw * 0.21,
+					d = cw * 0.28;
+
+				ctx.fillStyle = color;
+				puffs(ctx, t, cx, cy, a, b, c, d);
+
+				ctx.globalCompositeOperation = 'destination-out';
+				puffs(ctx, t, cx, cy, a, b, c - s, d - s);
+				ctx.globalCompositeOperation = 'source-over';
+			}
+
+			/*
+			var WIND_PATHS = [
+					downsample(63, upsample(8, [
+					-1.00, -0.28,
+					-0.75, -0.18,
+					-0.50,  0.12,
+					-0.20,  0.12,
+					-0.04, -0.04,
+					-0.07, -0.18,
+					-0.19, -0.18,
+					-0.23, -0.05,
+					-0.12,  0.11,
+					0.02,  0.16,
+					0.20,  0.15,
+					0.50,  0.07,
+					0.75,  0.18,
+					1.00,  0.28
+					])),
+					downsample(31, upsample(16, [
+					-1.00, -0.10,
+					-0.75,  0.00,
+					-0.50,  0.10,
+					-0.25,  0.14,
+					0.00,  0.10,
+					0.25,  0.00,
+					0.50, -0.10,
+					0.75, -0.14,
+					1.00, -0.10
+					]))
+				];
+			*/
+
+			var WIND_PATHS = [
+					[
+					-0.7500, -0.1800, -0.7219, -0.1527, -0.6971, -0.1225,
+					-0.6739, -0.0910, -0.6516, -0.0588, -0.6298, -0.0262,
+					-0.6083,  0.0065, -0.5868,  0.0396, -0.5643,  0.0731,
+					-0.5372,  0.1041, -0.5033,  0.1259, -0.4662,  0.1406,
+					-0.4275,  0.1493, -0.3881,  0.1530, -0.3487,  0.1526,
+					-0.3095,  0.1488, -0.2708,  0.1421, -0.2319,  0.1342,
+					-0.1943,  0.1217, -0.1600,  0.1025, -0.1290,  0.0785,
+					-0.1012,  0.0509, -0.0764,  0.0206, -0.0547, -0.0120,
+					-0.0378, -0.0472, -0.0324, -0.0857, -0.0389, -0.1241,
+					-0.0546, -0.1599, -0.0814, -0.1876, -0.1193, -0.1964,
+					-0.1582, -0.1935, -0.1931, -0.1769, -0.2157, -0.1453,
+					-0.2290, -0.1085, -0.2327, -0.0697, -0.2240, -0.0317,
+					-0.2064,  0.0033, -0.1853,  0.0362, -0.1613,  0.0672,
+					-0.1350,  0.0961, -0.1051,  0.1213, -0.0706,  0.1397,
+					-0.0332,  0.1512,  0.0053,  0.1580,  0.0442,  0.1624,
+					0.0833,  0.1636,  0.1224,  0.1615,  0.1613,  0.1565,
+					0.1999,  0.1500,  0.2378,  0.1402,  0.2749,  0.1279,
+					0.3118,  0.1147,  0.3487,  0.1015,  0.3858,  0.0892,
+					0.4236,  0.0787,  0.4621,  0.0715,  0.5012,  0.0702,
+					0.5398,  0.0766,  0.5768,  0.0890,  0.6123,  0.1055,
+					0.6466,  0.1244,  0.6805,  0.1440,  0.7147,  0.1630,
+					0.7500,  0.1800
+					],
+					[
+					-0.7500,  0.0000, -0.7033,  0.0195, -0.6569,  0.0399,
+					-0.6104,  0.0600, -0.5634,  0.0789, -0.5155,  0.0954,
+					-0.4667,  0.1089, -0.4174,  0.1206, -0.3676,  0.1299,
+					-0.3174,  0.1365, -0.2669,  0.1398, -0.2162,  0.1391,
+					-0.1658,  0.1347, -0.1157,  0.1271, -0.0661,  0.1169,
+					-0.0170,  0.1046,  0.0316,  0.0903,  0.0791,  0.0728,
+					0.1259,  0.0534,  0.1723,  0.0331,  0.2188,  0.0129,
+					0.2656, -0.0064,  0.3122, -0.0263,  0.3586, -0.0466,
+					0.4052, -0.0665,  0.4525, -0.0847,  0.5007, -0.1002,
+					0.5497, -0.1130,  0.5991, -0.1240,  0.6491, -0.1325,
+					0.6994, -0.1380,  0.7500, -0.1400
+					]
+				],
+				WIND_OFFSETS = [
+					{start: 0.36, end: 0.11},
+					{start: 0.56, end: 0.16}
+				];
+
+			function leaf(ctx, t, x, y, cw, s, color) {
+				var a = cw / 8,
+					b = a / 3,
+					c = 2 * b,
+					d = (t % 1) * TAU,
+					e = Math.cos(d),
+					f = Math.sin(d);
+
+				ctx.fillStyle = color;
+				ctx.strokeStyle = color;
+				ctx.lineWidth = s;
+				ctx.lineCap = "round";
+				ctx.lineJoin = "round";
+
+				ctx.beginPath();
+				ctx.arc(x        , y        , a, d          , d + Math.PI, false);
+				ctx.arc(x - b * e, y - b * f, c, d + Math.PI, d          , false);
+				ctx.arc(x + c * e, y + c * f, b, d + Math.PI, d          , true );
+				ctx.globalCompositeOperation = 'destination-out';
+				ctx.fill();
+				ctx.globalCompositeOperation = 'source-over';
+				ctx.stroke();
+			}
+
+			function swoosh(ctx, t, cx, cy, cw, s, index, total, color) {
+				t /= 2500;
+
+				var path = WIND_PATHS[index],
+					a = (t + index - WIND_OFFSETS[index].start) % total,
+					c = (t + index - WIND_OFFSETS[index].end  ) % total,
+					e = (t + index                            ) % total,
+					b, d, f, i;
+
+				ctx.strokeStyle = color;
+				ctx.lineWidth = s;
+				ctx.lineCap = "round";
+				ctx.lineJoin = "round";
+
+				if(a < 1) {
+				ctx.beginPath();
+
+				a *= path.length / 2 - 1;
+				b  = Math.floor(a);
+				a -= b;
+				b *= 2;
+				b += 2;
+
+				ctx.moveTo(
+					cx + (path[b - 2] * (1 - a) + path[b    ] * a) * cw,
+					cy + (path[b - 1] * (1 - a) + path[b + 1] * a) * cw
+				);
+
+				if(c < 1) {
+					c *= path.length / 2 - 1;
+					d  = Math.floor(c);
+					c -= d;
+					d *= 2;
+					d += 2;
+
+					for(i = b; i !== d; i += 2)
+					ctx.lineTo(cx + path[i] * cw, cy + path[i + 1] * cw);
+
+					ctx.lineTo(
+					cx + (path[d - 2] * (1 - c) + path[d    ] * c) * cw,
+					cy + (path[d - 1] * (1 - c) + path[d + 1] * c) * cw
+					);
+				}
+
+				else
+					for(i = b; i !== path.length; i += 2)
+					ctx.lineTo(cx + path[i] * cw, cy + path[i + 1] * cw);
+
+				ctx.stroke();
+				}
+
+				else if(c < 1) {
+				ctx.beginPath();
+
+				c *= path.length / 2 - 1;
+				d  = Math.floor(c);
+				c -= d;
+				d *= 2;
+				d += 2;
+
+				ctx.moveTo(cx + path[0] * cw, cy + path[1] * cw);
+
+				for(i = 2; i !== d; i += 2)
+					ctx.lineTo(cx + path[i] * cw, cy + path[i + 1] * cw);
+
+				ctx.lineTo(
+					cx + (path[d - 2] * (1 - c) + path[d    ] * c) * cw,
+					cy + (path[d - 1] * (1 - c) + path[d + 1] * c) * cw
+				);
+
+				ctx.stroke();
+				}
+
+				if(e < 1) {
+				e *= path.length / 2 - 1;
+				f  = Math.floor(e);
+				e -= f;
+				f *= 2;
+				f += 2;
+
+				leaf(
+					ctx,
+					t,
+					cx + (path[f - 2] * (1 - e) + path[f    ] * e) * cw,
+					cy + (path[f - 1] * (1 - e) + path[f + 1] * e) * cw,
+					cw,
+					s,
+					color
+				);
+				}
+			}
+
+			var Skycons = function(opts) {
+					this.list        = [];
+					this.interval    = null;
+					this.color       = opts && opts.color ? opts.color : "black";
+					this.resizeClear = !!(opts && opts.resizeClear);
+				};
+
+			Skycons.CLEAR_DAY = function(ctx, t, color) {
+				var w = ctx.canvas.width,
+					h = ctx.canvas.height,
+					s = Math.min(w, h);
+
+				sun(ctx, t, w * 0.5, h * 0.5, s, s * STROKE, color);
+			};
+
+			Skycons.CLEAR_NIGHT = function(ctx, t, color) {
+				var w = ctx.canvas.width,
+					h = ctx.canvas.height,
+					s = Math.min(w, h);
+
+				moon(ctx, t, w * 0.5, h * 0.5, s, s * STROKE, color);
+			};
+
+			Skycons.PARTLY_CLOUDY_DAY = function(ctx, t, color) {
+				var w = ctx.canvas.width,
+					h = ctx.canvas.height,
+					s = Math.min(w, h);
+
+				sun(ctx, t, w * 0.625, h * 0.375, s * 0.75, s * STROKE, color);
+				cloud(ctx, t, w * 0.375, h * 0.625, s * 0.75, s * STROKE, color);
+			};
+
+			Skycons.PARTLY_CLOUDY_NIGHT = function(ctx, t, color) {
+				var w = ctx.canvas.width,
+					h = ctx.canvas.height,
+					s = Math.min(w, h);
+
+				moon(ctx, t, w * 0.667, h * 0.375, s * 0.75, s * STROKE, color);
+				cloud(ctx, t, w * 0.375, h * 0.625, s * 0.75, s * STROKE, color);
+			};
+
+			Skycons.CLOUDY = function(ctx, t, color) {
+				var w = ctx.canvas.width,
+					h = ctx.canvas.height,
+					s = Math.min(w, h);
+
+				cloud(ctx, t, w * 0.5, h * 0.5, s, s * STROKE, color);
+			};
+
+			Skycons.RAIN = function(ctx, t, color) {
+				var w = ctx.canvas.width,
+					h = ctx.canvas.height,
+					s = Math.min(w, h);
+
+				rain(ctx, t, w * 0.5, h * 0.37, s * 0.9, s * STROKE, color);
+				cloud(ctx, t, w * 0.5, h * 0.37, s * 0.9, s * STROKE, color);
+			};
+
+			Skycons.SLEET = function(ctx, t, color) {
+				var w = ctx.canvas.width,
+					h = ctx.canvas.height,
+					s = Math.min(w, h);
+
+				sleet(ctx, t, w * 0.5, h * 0.37, s * 0.9, s * STROKE, color);
+				cloud(ctx, t, w * 0.5, h * 0.37, s * 0.9, s * STROKE, color);
+			};
+
+			Skycons.SNOW = function(ctx, t, color) {
+				var w = ctx.canvas.width,
+					h = ctx.canvas.height,
+					s = Math.min(w, h);
+
+				snow(ctx, t, w * 0.5, h * 0.37, s * 0.9, s * STROKE, color);
+				cloud(ctx, t, w * 0.5, h * 0.37, s * 0.9, s * STROKE, color);
+			};
+
+			Skycons.WIND = function(ctx, t, color) {
+				var w = ctx.canvas.width,
+					h = ctx.canvas.height,
+					s = Math.min(w, h);
+
+				swoosh(ctx, t, w * 0.5, h * 0.5, s, s * STROKE, 0, 2, color);
+				swoosh(ctx, t, w * 0.5, h * 0.5, s, s * STROKE, 1, 2, color);
+			};
+
+			Skycons.FOG = function(ctx, t, color) {
+				var w = ctx.canvas.width,
+					h = ctx.canvas.height,
+					s = Math.min(w, h),
+					k = s * STROKE;
+
+				fogbank(ctx, t, w * 0.5, h * 0.32, s * 0.75, k, color);
+
+				t /= 5000;
+
+				var a = Math.cos((t       ) * TAU) * s * 0.02,
+					b = Math.cos((t + 0.25) * TAU) * s * 0.02,
+					c = Math.cos((t + 0.50) * TAU) * s * 0.02,
+					d = Math.cos((t + 0.75) * TAU) * s * 0.02,
+					n = h * 0.936,
+					e = Math.floor(n - k * 0.5) + 0.5,
+					f = Math.floor(n - k * 2.5) + 0.5;
+
+				ctx.strokeStyle = color;
+				ctx.lineWidth = k;
+				ctx.lineCap = "round";
+				ctx.lineJoin = "round";
+
+				line(ctx, a + w * 0.2 + k * 0.5, e, b + w * 0.8 - k * 0.5, e);
+				line(ctx, c + w * 0.2 + k * 0.5, f, d + w * 0.8 - k * 0.5, f);
+			};
+
+			Skycons.prototype = {
+				_determineDrawingFunction: function(draw) {
+				if(typeof draw === "string")
+					draw = Skycons[draw.toUpperCase().replace(/-/g, "_")] || null;
+
+				return draw;
+				},
+				add: function(el, draw) {
+				var obj;
+
+				if(typeof el === "string")
+					el = document.getElementById(el);
+
+				// Does nothing if canvas name doesn't exists
+				if(el === null)
+					return;
+
+				draw = this._determineDrawingFunction(draw);
+
+				// Does nothing if the draw function isn't actually a function
+				if(typeof draw !== "function")
+					return;
+
+				obj = {
+					element: el,
+					context: el.getContext("2d"),
+					drawing: draw
+				};
+
+				this.list.push(obj);
+				this.draw(obj, KEYFRAME);
+				},
+				set: function(el, draw) {
+				var i;
+
+				if(typeof el === "string")
+					el = document.getElementById(el);
+
+				for(i = this.list.length; i--; )
+					if(this.list[i].element === el) {
+					this.list[i].drawing = this._determineDrawingFunction(draw);
+					this.draw(this.list[i], KEYFRAME);
+					return;
+					}
+
+				this.add(el, draw);
+				},
+				remove: function(el) {
+				var i;
+
+				if(typeof el === "string")
+					el = document.getElementById(el);
+
+				for(i = this.list.length; i--; )
+					if(this.list[i].element === el) {
+					this.list.splice(i, 1);
+					return;
+					}
+				},
+				draw: function(obj, time) {
+				var canvas = obj.context.canvas;
+
+				if(this.resizeClear)
+					canvas.width = canvas.width;
+
+				else
+					obj.context.clearRect(0, 0, canvas.width, canvas.height);
+
+				obj.drawing(obj.context, time, this.color);
+				},
+				play: function() {
+				var self = this;
+
+				this.pause();
+				this.interval = requestInterval(function() {
+					var now = Date.now(),
+						i;
+
+					for(i = self.list.length; i--; )
+					self.draw(self.list[i], now);
+				}, 1000 / 60);
+				},
+				pause: function() {
+				var i;
+
+				if(this.interval) {
+					cancelInterval(this.interval);
+					this.interval = null;
+				}
+				}
+			};
+
+			global.Skycons = Skycons;
+			}(this));
+		</script>
 		<!-- //sky icons -->
 		<!-- //js -->
 		<!-- web font -->
-		<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'><!--web font-->
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'><!--web font-->
 	</head>
 	
 	<body>
@@ -70,62 +2568,49 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</script>
 						<!-- //Date-JavaScript -->
 					</div>
-					<h2>${TEM}<span>K</span></h2>
+					<h2>${TEM}<span>o</span>C</h2>
 					<h4>${NAME_CITY}</h4>
-					<h6>Rain Falling</h6> 
 				</div>
-				<div class="w3layouts-slider">
-					<div id="owl-demo" class="owl-carousel owl-theme">
-						<div class="item agile-item">
-							<canvas id="sleet" width="40" height="40"></canvas>
-							<h6>Thr</h6>
-						</div> 
-						<div class="item agile-item">
-							<canvas id="rain" width="40" height="40"></canvas>
-							<h6>Fri</h6>
-						</div> 
-						<div class="item agile-item">
-							<canvas id="partly-cloudy-day" width="40" height="40"></canvas> 
-							<h6>Sat</h6>
-						</div>  
-						<div class="item agile-item">
-							<canvas id="cloudy" width="40" height="40"></canvas>
-							<h6>Sun</h6>  
-						</div> 
-						<div class="item agile-item">
-							<canvas id="clear-night" width="40" height="40"></canvas>
-							<h6>Mon</h6>  
-						</div> 
-						<div class="item agile-item">
-							<canvas id="clear-day" width="40" height="40"></canvas>
-							<h6>Tue</h6> 
-						</div>  
-						<div class="item agile-item">
-							<canvas id="partly-cloudy-night" width="40" height="40"></canvas>
-							<h6>Wed</h6> 
-						</div> 
-					</div>
-					<script>
-						 var icons = new Skycons({"color": "#fff"}),
-							  list  = [
-								"clear-night","clear-day", "partly-cloudy-day",
-								"partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
-								"fog"
-							  ],
-							  i;
-	
-						  for(i = list.length; i--; )
-							icons.set(list[i], list[i]);
-	
-						  icons.play();
-					</script>
+				<div class="inputCity">
+					<input type="text" name="" id="inputName" class="btn btn-primary" placeholder="Input City's name (English: hanoi, tokyo,..)" value="">
+					<a name="" id="searchRs" class="btn btn-primary" href="#" role="button">
+						<i class="fa fa-search" aria-hidden="true"></i>
+					</a>
 				</div>
+
+				<script>
+					$("#searchRs").click(function (e) { 
+						e.preventDefault();
+						let name = $("#inputName").val();
+						let oldName = $(".agileinfo-text h6").html();
+						$("#inputName").val("");
+						getNewRs(name).then(rs=>{
+							let temp = Math.round((rs.main.temp - 273.15));
+							$(".agileinfo-text h2").html(temp + `<span>o</span>C`);
+							$(".agileinfo-text h4").html(rs.name);
+						})
+					});
+					
+					async function getNewRs(name){
+						let rs= null;
+						await $.ajax({
+							type: "GET",
+							url: "http://api.openweathermap.org/data/2.5/weather?q=" + name + "&appid=347e72f54a7cde54465418abd431fcf0",
+							dataType: "json",
+							timeout:30000,
+							success: function (response) {
+								rs = response;
+							}
+						});
+						return rs;
+					}
+				</script>
 			</div>	
 		</div>	
 		<!-- //main -->
 		<!-- copyrights -->  
 		<div class="copy-rights wthree">		 	
-			<p>2020 - Weather Forecast <a href="https://www.facebook.com/LoiIn99" target="_blank">LoiIn</a> </p>		 	
+			<p>2020 - Weather Forecast <a href="https://www.facebook.com/altonyx.fn3/" target="_blank">Lan Anh</a> </p>		 	
 		</div>
 		<!-- //copyright -->
 	</body>

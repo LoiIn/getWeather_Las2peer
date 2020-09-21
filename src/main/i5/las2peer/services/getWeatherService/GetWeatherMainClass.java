@@ -22,6 +22,7 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
@@ -120,7 +121,7 @@ public class GetWeatherMainClass extends RESTService {
 //		private GetWeatherMainClass getabc = (GetWeatherMainClass) Context.getCurrent().getService();
 		
 		@GET
-		@Path("/{location}")
+		@Path("/getTemp/{location}")
 		@Produces(MediaType.TEXT_HTML)
 		public Response getWeather(@PathParam("location") String location) {
 			
@@ -144,7 +145,8 @@ public class GetWeatherMainClass extends RESTService {
 				
 //				html = fillPlaceHolder(html, "SC_URL", getabc.staticContentUrl);	
 				html = fillPlaceHolder(html, "NAME_CITY", data.getName());
-				html = fillPlaceHolder(html, "TEM", String.valueOf(data.getMain().getTemp()));
+				int newTem = (int)(data.getMain().getTemp()- 273.15);
+				html = fillPlaceHolder(html, "TEM", String.valueOf(newTem));
 				
 				// finally return resulting HTML
 				return Response.status(Status.OK).entity(html).build();
@@ -155,7 +157,7 @@ public class GetWeatherMainClass extends RESTService {
 		}
 		
 		@GET
-		@Path("/getTemplate")
+		@Path("/")
 		@Produces(MediaType.TEXT_HTML)
 		
 		public Response getWeatherTeamplate() throws Exception{
@@ -164,10 +166,13 @@ public class GetWeatherMainClass extends RESTService {
 			try {
 				// load template
 				Scanner scanner;
-				scanner = new Scanner(new File("./frontEnd/index.html"));
+				scanner = new Scanner(new File("./etc/frontEnd/index.html"));
 				String html = "";
 				html = scanner.useDelimiter("\\A").next();
 				scanner.close();
+				
+				html = fillPlaceHolder(html, "NAME_CITY", "~");
+				html = fillPlaceHolder(html, "TEM", "~");
 				// finally return resulting HTML
 				return Response.status(Status.OK).entity(html).build();
 			} catch (Exception e) {
