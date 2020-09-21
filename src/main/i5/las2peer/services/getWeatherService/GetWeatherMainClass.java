@@ -63,14 +63,14 @@ import okhttp3.ResponseBody;
 				title = "las2peer Template Service",
 				version = "1.0.0",
 				description = "A las2peer Template Service for demonstration purposes.",
-				termsOfService = "http://your-terms-of-service-url.com",
+				termsOfService = "",
 				contact = @Contact(
-						name = "John Doe",
-						url = "provider.com",
-						email = "john.doe@provider.com"),
+						name = "Lan Anh",
+						url = "facebook",
+						email = "mail"),
 				license = @License(
-						name = "your software license name",
-						url = "http://your-software-license-url.com")))
+						name = "",
+						url = "")))
 @ServicePath("weather")
 // TODO Your own service class
 public class GetWeatherMainClass extends RESTService {
@@ -80,44 +80,7 @@ public class GetWeatherMainClass extends RESTService {
 		
 	}
 	
-
-	@GET
-	@Path("/getTemp/{location}")
-	@Produces(MediaType.TEXT_HTML)
-	public Response getWeather(@PathParam("location") String location) {
-		
-		 OkHttpClient client = new OkHttpClient();
-		 Gson gson = new Gson();
-		  String API_KEY = "347e72f54a7cde54465418abd431fcf0";
-		  Request urlString = new Request.Builder().url("http://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + API_KEY).build();
-		  JsonResult data = null;
-		   String onAction = "retrieving HTML";
-
-	      try {
-
-	    	okhttp3.Response response = client.newCall(urlString).execute();
-	        ResponseBody curWeather = response.body();
-	        data = gson.fromJson(curWeather.string(), JsonResult.class);
-	        Scanner scanner;
-			scanner = new Scanner(new File("./etc/frontEnd/index.html"));
-			String html = "";
-			html = scanner.useDelimiter("\\A").next();
-			scanner.close();
-			
-			//truyền thông tin về tên hay nhiệt độ của thành phố
-			html = fillPlaceHolder(html, "NAME_CITY", data.getName());   
-			int newTem = (int)(data.getMain().getTemp()- 273.15);
-			html = fillPlaceHolder(html, "TEM", String.valueOf(newTem));
-			
-			// finally return resulting HTML
-			return Response.status(Status.OK).entity(html).build();
-	      } catch (Exception e) {
-	            e.printStackTrace();
-	            return internalError(onAction);
-	  	  }	     
-	}
-	
-	
+	// get Weather Service's Template
 	@GET
 	@Path("/")
 	@Produces(MediaType.TEXT_HTML)
@@ -147,9 +110,53 @@ public class GetWeatherMainClass extends RESTService {
 			e.printStackTrace();
 			return internalError(onAction);
 		}
-			
-		
 	}
+
+	// Get weather's info of one location 
+	@GET
+	@Path("/getTemp/{location}")
+	@Produces(MediaType.TEXT_HTML)
+	public Response getWeather(@PathParam("location") String location) {
+		
+		  OkHttpClient client = new OkHttpClient();
+		 
+		  Gson gson = new Gson();
+		 
+		  String API_KEY = "347e72f54a7cde54465418abd431fcf0";
+		  
+		  Request urlString = new Request.Builder().url("http://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + API_KEY).build();
+		  
+		  JsonResult data = null;
+		  
+		  String onAction = "retrieving HTML";
+
+	      try {
+
+	    	okhttp3.Response response = client.newCall(urlString).execute();
+	    
+	        ResponseBody curWeather = response.body();
+	        
+	        data = gson.fromJson(curWeather.string(), JsonResult.class);
+	        
+	        
+	        Scanner scanner;
+			scanner = new Scanner(new File("./etc/frontEnd/index.html"));
+			String html = "";
+			html = scanner.useDelimiter("\\A").next();
+			scanner.close();
+			
+			html = fillPlaceHolder(html, "NAME_CITY", data.getName());   
+			int newTem = (int)(data.getMain().getTemp()- 273.15);
+			html = fillPlaceHolder(html, "TEM", String.valueOf(newTem));
+			
+			return Response.status(Status.OK).entity(html).build();
+	      } catch (Exception e) {
+	            e.printStackTrace();
+	            return internalError(onAction);
+	  	  }	     
+	}
+	
+			
 
 	// return response's error 
 	private Response internalError(String onAction) {
@@ -160,7 +167,9 @@ public class GetWeatherMainClass extends RESTService {
 	
 	// add data from response to html file
 	private String fillPlaceHolder(String data, String placeholder, String value) {
+		
 		Pattern p = Pattern.compile("\\$\\{" + placeholder + "\\}");
+		
 		Matcher m = p.matcher(data);
 
 		String adaptedform = new String(data);
@@ -173,11 +182,6 @@ public class GetWeatherMainClass extends RESTService {
 		return adaptedform;
 	}
 	
-	
 
-		
-	
-	
-	
 	
 }
