@@ -75,156 +75,107 @@ import okhttp3.ResponseBody;
 // TODO Your own service class
 public class GetWeatherMainClass extends RESTService {
 	
-//	private String epUrl, las2peerUrl, staticContentUrl;
 	
 	public GetWeatherMainClass() {
-//		this.setFieldValues();
-//		
-//		// make sure las2peerUrl and staticContentUrl have trailing slash
-//		if (!las2peerUrl.endsWith("/")) {
-//			las2peerUrl += "/";
-//		}
-//		this.epUrl = las2peerUrl + "mobsos-surveys/";
-//
-//		if (staticContentUrl == null || staticContentUrl.isEmpty()) {
-//			staticContentUrl = epUrl;
-//		} else {
-//			if (!staticContentUrl.endsWith("/")) {
-//				staticContentUrl += "/";
-//			}
-//		}
-		
 		
 	}
 	
-	// //////////////////////////////////////////////////////////////////////////////////////
-	// Service methods.
-	// //////////////////////////////////////////////////////////////////////////////////////
-//	@Path("/") // this is the root resource
-//	@Api
-//	@SwaggerDefinition(
-//			info = @Info(
-//					title = "Weather Forecast",
-//					version = "0.1",
-//					description = "",
-//					termsOfService = "",
-//					contact = @Contact(
-//							name = "LoiIn",
-//							url = "",
-//							email = "canducloi99@gmail.com"),
-//					license = @License(
-//							name = "MIT",
-//							url = "")))
+
+	@GET
+	@Path("/getTemp/{location}")
+	@Produces(MediaType.TEXT_HTML)
+	public Response getWeather(@PathParam("location") String location) {
+		
+		 OkHttpClient client = new OkHttpClient();
+		 Gson gson = new Gson();
+		  String API_KEY = "347e72f54a7cde54465418abd431fcf0";
+		  Request urlString = new Request.Builder().url("http://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + API_KEY).build();
+		  JsonResult data = null;
+		   String onAction = "retrieving HTML";
+
+	      try {
+
+	    	okhttp3.Response response = client.newCall(urlString).execute();
+	        ResponseBody curWeather = response.body();
+	        data = gson.fromJson(curWeather.string(), JsonResult.class);
+	        Scanner scanner;
+			scanner = new Scanner(new File("./etc/frontEnd/index.html"));
+			String html = "";
+			html = scanner.useDelimiter("\\A").next();
+			scanner.close();
+			
+			//truyền thông tin về tên hay nhiệt độ của thành phố
+			html = fillPlaceHolder(html, "NAME_CITY", data.getName());   
+			int newTem = (int)(data.getMain().getTemp()- 273.15);
+			html = fillPlaceHolder(html, "TEM", String.valueOf(newTem));
+			
+			// finally return resulting HTML
+			return Response.status(Status.OK).entity(html).build();
+	      } catch (Exception e) {
+	            e.printStackTrace();
+	            return internalError(onAction);
+	  	  }	     
+	}
 	
-//	public static class Resource{
-//		
-//		private GetWeatherMainClass getabc = (GetWeatherMainClass) Context.getCurrent().getService();
+	
+	@GET
+	@Path("/")
+	@Produces(MediaType.TEXT_HTML)
+	
+	public Response getWeatherTeamplate() throws Exception{
 		
-		@GET
-		@Path("/getTemp/{location}")
-		@Produces(MediaType.TEXT_HTML)
-		public Response getWeather(@PathParam("location") String location) {
+		String onAction = "retrieving HTML";
+		try {
+			// load template
+			Scanner scanner;
 			
-			 OkHttpClient client = new OkHttpClient();
-			 Gson gson = new Gson();
-			  String API_KEY = "347e72f54a7cde54465418abd431fcf0";
-		      Request urlString = new Request.Builder().url("http://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + API_KEY).build();
-		      JsonResult data = null;
-		       String onAction = "retrieving HTML";
-
-		      try {
-
-		    	okhttp3.Response response = client.newCall(urlString).execute();
-		        ResponseBody curWeather = response.body();
-		        data = gson.fromJson(curWeather.string(), JsonResult.class);
-		        Scanner scanner;
-				scanner = new Scanner(new File("./etc/frontEnd/index.html"));
-				String html = "";
-				html = scanner.useDelimiter("\\A").next();
-				scanner.close();
-				
-//				html = fillPlaceHolder(html, "SC_URL", getabc.staticContentUrl);	
-				html = fillPlaceHolder(html, "NAME_CITY", data.getName());
-				int newTem = (int)(data.getMain().getTemp()- 273.15);
-				html = fillPlaceHolder(html, "TEM", String.valueOf(newTem));
-				
-				// finally return resulting HTML
-				return Response.status(Status.OK).entity(html).build();
-		      } catch (Exception e) {
-		            e.printStackTrace();
-		            return internalError(onAction);
-		  	  }	     
-		}
-		
-		@GET
-		@Path("/")
-		@Produces(MediaType.TEXT_HTML)
-		
-		public Response getWeatherTeamplate() throws Exception{
+			// scanner all html's contents
+			scanner = new Scanner(new File("./etc/frontEnd/index.html"));
+			String html = "";
 			
-			String onAction = "retrieving HTML";
-			try {
-				// load template
-				Scanner scanner;
-				scanner = new Scanner(new File("./etc/frontEnd/index.html"));
-				String html = "";
-				html = scanner.useDelimiter("\\A").next();
-				scanner.close();
-				
-				html = fillPlaceHolder(html, "NAME_CITY", "~");
-				html = fillPlaceHolder(html, "TEM", "~");
-				// finally return resulting HTML
-				return Response.status(Status.OK).entity(html).build();
-			} catch (Exception e) {
-				e.printStackTrace();
-				return internalError(onAction);
-			}
-				
+			//catch the first character of hmtl's content
+			html = scanner.useDelimiter("\\A").next();
+			scanner.close();
 			
+			// add info of city: name, temp into html 
+			html = fillPlaceHolder(html, "NAME_CITY", "~");   
+			html = fillPlaceHolder(html, "TEM", "~");
+			
+			// finally return resulting HTML
+			return Response.status(Status.OK).entity(html).build();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return internalError(onAction);
 		}
-
-		// TODO your own service methods, e. g. for RMI
-		private Response internalError(String onAction) {
-			return Response.status(Status.INTERNAL_SERVER_ERROR).entity("Internal error while " + onAction + "!")
-					.type(MediaType.TEXT_PLAIN).build();
-		}
+			
 		
-		private String fillPlaceHolder(String data, String placeholder, String value) {
-			// detect all tags used by questionnaire author throughout the form
-			// and replace them by the respective values.
-			Pattern p = Pattern.compile("\\$\\{" + placeholder + "\\}");
-			Matcher m = p.matcher(data);
+	}
 
-			String adaptedform = new String(data);
+	// return response's error 
+	private Response internalError(String onAction) {
+		return Response.status(Status.INTERNAL_SERVER_ERROR).entity("Internal error while " + onAction + "!")
+				.type(MediaType.TEXT_PLAIN).build();
+	}
+	
+	
+	// add data from response to html file
+	private String fillPlaceHolder(String data, String placeholder, String value) {
+		Pattern p = Pattern.compile("\\$\\{" + placeholder + "\\}");
+		Matcher m = p.matcher(data);
 
-			// replace any occurring author tags within questionnaire form
-			// Vector<String> foundTags = new Vector<String>();
-			while (m.find()) {
-				String tag = m.group().substring(2, m.group().length() - 1);
-				adaptedform = adaptedform.replaceAll("\\$\\{" + tag + "\\}", value);
-			}
+		String adaptedform = new String(data);
 
-			return adaptedform;
+		while (m.find()) {
+			String tag = m.group().substring(2, m.group().length() - 1);
+			adaptedform = adaptedform.replaceAll("\\$\\{" + tag + "\\}", value);
 		}
-		
-		private String i18n(String t) {
-			Locale locale = new Locale("en");
 
-			ResourceBundle messages = ResourceBundle.getBundle("MessageBundle", locale);
-			Enumeration<String> e = messages.getKeys();
-
-			while (e.hasMoreElements()) {
-
-				String key = e.nextElement();
-				String translation = messages.getString(key);
-				t = t.replaceAll("\\$\\{" + key + "\\}", escapeHtml4(translation));
-			}
-
-			return t;
-		}
+		return adaptedform;
+	}
+	
+	
 
 		
-//	}
 	
 	
 	
