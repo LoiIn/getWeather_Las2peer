@@ -323,8 +323,8 @@
 						</script>
 						<!-- end Date js -->
 					</div>
-					<h2>${TEM}<span>o</span>C</h2>
-					<h4>${NAME_CITY}</h4>
+					<h2>~<span>o</span>C</h2>
+					<h4>~</h4>
 				</div>
 				<div class="inputCity">
 					<input type="text" name="" id="inputName" class="btn btn-primary" placeholder="Input City's name (English: hanoi, tokyo,..)" value="">
@@ -371,20 +371,6 @@
 						})
 					});
 
-					function changeUrl(title, url){
-						if (typeof(history.pushState) != "undefined") {  
-							var obj = { Title: title, Url: url };  
-							history.pushState(obj, obj.Title, obj.Url);  
-						} else {  
-							alert("Browser does not support HTML5.");  
-						}  
-					}
-
-					function processAjaxData(response, urlPath){
-						document.getElementById("content").innerHTML = response.html;
-						document.title = response.pageTitle;
-						window.history.pushState({"html":response.html,"pageTitle":response.pageTitle},"", urlPath);
- 					}
 					
 					async function getNewRs(name){
 						let rs= null;

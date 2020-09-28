@@ -99,11 +99,7 @@ public class GetWeatherMainClass extends RESTService {
 			//catch the first character of hmtl's content
 			html = scanner.useDelimiter("\\A").next();
 			scanner.close();
-			
-			// add info of city: name, temp into html 
-			html = fillPlaceHolder(html, "NAME_CITY", "~");   
-			html = fillPlaceHolder(html, "TEM", "~");
-			
+		
 			// finally return resulting HTML
 			return Response.status(Status.OK).entity(html).build();
 		} catch (Exception e) {
@@ -115,7 +111,7 @@ public class GetWeatherMainClass extends RESTService {
 	// Get weather's info of one location 
 	@GET
 	@Path("/getTemp/{location}")
-	@Produces(MediaType.TEXT_HTML)
+	@Produces(MediaType.APPLICATION_JSON)
 	public Response getWeather(@PathParam("location") String location) {
 		
 		  OkHttpClient client = new OkHttpClient();
@@ -145,11 +141,9 @@ public class GetWeatherMainClass extends RESTService {
 			html = scanner.useDelimiter("\\A").next();
 			scanner.close();
 			
-			html = fillPlaceHolder(html, "NAME_CITY", data.getName());   
-			int newTem = (int)(data.getMain().getTemp()- 273.15);
-			html = fillPlaceHolder(html, "TEM", String.valueOf(newTem));
 			
-			return Response.status(Status.OK).entity(html).build();
+			
+			return Response.status(Status.OK).entity(data).build();
 	      } catch (Exception e) {
 	            e.printStackTrace();
 	            return internalError(onAction);
@@ -165,23 +159,6 @@ public class GetWeatherMainClass extends RESTService {
 	}
 	
 	
-	// add data from response to html file
-	private String fillPlaceHolder(String data, String placeholder, String value) {
-		
-		Pattern p = Pattern.compile("\\$\\{" + placeholder + "\\}");
-		
-		Matcher m = p.matcher(data);
-
-		String adaptedform = new String(data);
-
-		while (m.find()) {
-			String tag = m.group().substring(2, m.group().length() - 1);
-			adaptedform = adaptedform.replaceAll("\\$\\{" + tag + "\\}", value);
-		}
-
-		return adaptedform;
-	}
 	
-
 	
 }
