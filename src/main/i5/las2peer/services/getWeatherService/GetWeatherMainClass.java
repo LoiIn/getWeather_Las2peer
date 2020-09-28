@@ -133,15 +133,6 @@ public class GetWeatherMainClass extends RESTService {
 	        ResponseBody curWeather = response.body();
 	        
 	        data = gson.fromJson(curWeather.string(), JsonResult.class);
-	        
-	        
-	        Scanner scanner;
-			scanner = new Scanner(new File("./etc/frontEnd/index.html"));
-			String html = "";
-			html = scanner.useDelimiter("\\A").next();
-			scanner.close();
-			
-			
 			
 			return Response.status(Status.OK).entity(data).build();
 	      } catch (Exception e) {
