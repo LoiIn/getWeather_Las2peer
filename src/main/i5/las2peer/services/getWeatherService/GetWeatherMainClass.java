@@ -80,33 +80,6 @@ public class GetWeatherMainClass extends RESTService {
 		
 	}
 	
-	// get Weather Service's Template
-	@GET
-	@Path("/")
-	@Produces(MediaType.TEXT_HTML)
-	
-	public Response getWeatherTeamplate() throws Exception{
-		
-		String onAction = "retrieving HTML";
-		try {
-			// load template
-			Scanner scanner;
-			
-			// scanner all html's contents
-			scanner = new Scanner(new File("./etc/frontEnd/index.html"));
-			String html = "";
-			
-			//catch the first character of hmtl's content
-			html = scanner.useDelimiter("\\A").next();
-			scanner.close();
-		
-			// finally return resulting HTML
-			return Response.status(Status.OK).entity(html).build();
-		} catch (Exception e) {
-			e.printStackTrace();
-			return internalError(onAction);
-		}
-	}
 
 	// Get weather's info of one location 
 	@GET

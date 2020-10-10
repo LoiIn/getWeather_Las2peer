@@ -1,3 +1,5 @@
+*{margin: 0;padding: 0;}
+
 /*set up common*/
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
 article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
@@ -18,7 +20,7 @@ a{text-decoration:none;}
 .txt-lt{text-align:left;}
 
 .txt-center{text-align:center;}
-/
+
 .float-rt{float:right;}
 
 .float-lt{float:left;}
@@ -41,12 +43,12 @@ img{max-width:100%;}
 /*--end reset--*/
 body {
     font-family: 'Open Sans', sans-serif;
-    background: url(../images/1.jpg)repeat 0px 0px;
+    background: url(https://cdn2.vectorstock.com/i/1000x1000/07/81/seamless-weather-forecast-background-vector-2000781.jpg);
     background-attachment: fixed;
     -webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	-ms-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
     background-size: cover;
 }
 h1 {
@@ -56,10 +58,10 @@ h1 {
     font-weight: 100;
 }
 /*-- main --*/
-.main-agileits{
+.main-weather-forecast{
     padding: 2em 0 0;
 }
-.main-wthree-row {
+.row-weather-forecast {
     width: 25%;
     margin: 2em auto;
     background: rgba(0, 0, 0, 0.34);
@@ -73,45 +75,35 @@ h1 {
     line-height: 1.8em;
 }
 
-.agileinfo-text {
+.weather-details {
     text-align: center;
 }
-.agileinfo-text h3 {
+.weather-details h3 {
     font-size: 2em;
     color: #fff;
 }
-.agileinfo-text h5 {
+.weather-details h5 {
     font-size: 0.9em;
     color: #ececec;
     font-weight: 100;
     margin-top: 0.5em;
 }
-.agileinfo-text h2 {
+.weather-details h2 {
     font-size: 8em;
     font-weight: 900;
-    color: rgba(255, 215, 1, 0.59); 
+    color: red;
 }
-.agileinfo-text h2 span {
+.weather-details h2 span {
     font-weight: 100;
     font-size: 0.5em;
     vertical-align: text-top;
 }
-.agileinfo-text h4 {
+.weather-details h4 {
     font-size: 2em;
     color: #fff;
     letter-spacing: 3px;
 }
-.agileinfo-text h6 {
-    font-size: .9em;
-    color: #fff;
-    font-weight: 300;
-    letter-spacing: 1px;
-    margin-top: 1em;
-}
-.w3layouts-slider { 
-    width: 70%;
-    margin: 3em auto 0;
-}
+
 .item.agile-item {
     text-align: center;
 }
@@ -132,130 +124,150 @@ h1 {
     line-height: 1.8em;
 }
 .copy-rights p a{
-	color:#fff; 
-	-webkit-transition:.5s all;
-	-moz-transition:.5s all;
-	-o-transition:.5s all;
-	-ms-transition:.5s all;
-	transition:.5s all;
+    color:#fff; 
+    -webkit-transition:.5s all;
+    -moz-transition:.5s all;
+    -o-transition:.5s all;
+    -ms-transition:.5s all;
+    transition:.5s all;
 } 
 .copy-rights p a:hover{
-  color: #ffd701; 
+color: #ffd701; 
 } 
 
-@media(max-width:1440px){
-.main-wthree-row {
-    width: 27%; 
+.inputName{
+    width:100%;
+    display: flex;
+    justify-content: space-between;
 }
+
+#inputName{
+    margin-top: 70px;
+    width: 80%;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.198);
+    color: white;
+    border: none;
+}
+
+#searchRs{
+    margin-top: 70px;
+    vertical-align: middle;
+    width: 18%;
+    text-align: center;
+    height: 30px;
+    float: right;
+    background-color: rgba(255, 217, 1, 0.863);
+}
+
+::placeholder{
+    color:white;
+    opacity: 1;
+}
+
+/* web responsive */
+@media(max-width:1440px){
+    .row-weather-forecast {
+        width: 27%; 
+    }
 } 
 @media(max-width:1280px){
-.main-wthree-row {
-    width: 31%;
-}
+    .row-weather-forecast {
+        width: 31%;
+    }
 }
 @media(max-width:1080px){
-.main-wthree-row {
-    width: 35%;
-}
+    .row-weather-forecast {
+        width: 35%;
+    }
 } 
 @media(max-width:991px){
-.main-agileits {
-    padding: 2em 0 0;
-}
-h1 {
-    font-size: 2.6em; 
-}
-.agileinfo-text h2 {
-    font-size: 7em; 
-}
-.main-wthree-row {
-    width: 40%;
-}
+    .main-weather-forecast {
+        padding: 2em 0 0;
+    }
+    h1 {
+        font-size: 2.6em; 
+    }
+    .weather-details h2 {
+        font-size: 7em; 
+    }
+    .row-weather-forecast {
+        width: 40%;
+    }
 } 
 @media(max-width:768px){
-.copy-rights { 
-    padding: 1em 0 2em;
-}
-.w3layouts-slider { 
-    margin: 2em auto 0;
-}
+    .copy-rights { 
+        padding: 1em 0 2em;
+    }
+
 }
 @media(max-width:667px){
-.main-wthree-row {
-    width: 50%;
-}
+    .row-weather-forecast {
+        width: 50%;
+    }
 }
 @media(max-width:600px){
-h1 {
-    font-size: 2.4em;
-}
-.agileinfo-text h6 { 
-    margin-top: 0.5em;
-}
-.main-agileits {
-    padding: 1.5em 0 0;
-}
+    h1 {
+        font-size: 2.4em;
+    }
+    .weather-details h6 { 
+        margin-top: 0.5em;
+    }
+    .main-weather-forecast {
+        padding: 1.5em 0 0;
+    }
 } 
 @media(max-width:480px){
-h1 {
-    font-size: 2em;
-}
-.main-wthree-row {
-    width: 57%;
-}
-.date {
-    font-size: 1.2em; 
-}
-.w3layouts-slider {
-    width: 75%; 
-}
+    h1 {
+        font-size: 2em;
+    }
+    .row-weather-forecast {
+        width: 57%;
+    }
+    .date {
+        font-size: 1.2em; 
+    }
 }
 @media(max-width:414px){
-.agileinfo-text h2 {
-    font-size: 6em;
-}
-.agileinfo-text h4 {
-    font-size: 1.8em; 
-    letter-spacing: 1px;
-}
-.w3layouts-slider {
-    width: 85%;
-}
-.main-wthree-row { 
-    padding: 1.5em;
-}
-.copy-rights p {
-    font-size: 0.9em; 
-    padding: 0 1em;
-}
+    .weather-details h2 {
+        font-size: 6em;
+    }
+    .weather-details h4 {
+        font-size: 1.8em; 
+        letter-spacing: 1px;
+    }
+    .row-weather-forecast { 
+        padding: 1.5em;
+    }
+    .copy-rights p {
+        font-size: 0.9em; 
+        padding: 0 1em;
+    }
 }
 @media(max-width:384px){
-h1 {
-    font-size: 1.8em;
-}
-.main-wthree-row {
-    width: 70%;
-}
+    h1 {
+        font-size: 1.8em;
+    }
+    .row-weather-forecast {
+        width: 70%;
+    }
 } 
 @media(max-width:320px){
-h1 {
-    font-size: 1.5em;
+    h1 {
+        font-size: 1.5em;
+    }
+    .row-weather-forecast {
+        width: 75%;
+        padding: 1em;
+    }
+    .weather-details h2 {
+        font-size: 5em;
+    }
+    .weather-details h4 {
+        font-size: 1.4em; 
+    } 
+    .weather-details h6 { 
+        letter-spacing: 0px; 
+    }
 }
-.main-wthree-row {
-    width: 75%;
-    padding: 1em;
-}
-.agileinfo-text h2 {
-    font-size: 5em;
-}
-.agileinfo-text h4 {
-    font-size: 1.4em; 
-} 
-.agileinfo-text h6 { 
-    letter-spacing: 0px; 
-}
-.w3layouts-slider {
-    width: 90%;
-}
-}
-/*-- //responsive-design --*/
+/*-- end responsive --*/
